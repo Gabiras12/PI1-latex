@@ -1,0 +1,147 @@
+\chapter[Introdução]{Introdução}\label{cap1}
+	Essa seção aborda sobre o contexto do projeto, o problema a ser resolvido e a metodologia para desenvolvimento do trabalho. 
+\section{Contexto}
+
+As doenças cardio vasculares fazem parte de condições que predispõe uma pessoa à maiores riscos de desenvolver e sofrer doenças do coração e dos vasos. Alguns dos fatores de risco para tais problemas são: hábitos alimentares ruins, fumo, obesidade, sedentarismo, diabetes e idade avançada. \cite{ceolin}. Segundo dados do Ministério da Saúde a população Distrito Federal tem envelhecido e mais de 33\% possui algum tipo de doença crônica. \cite{portal}
+
+As doenças crônicas são responsáveis por mais de 72\% de mortes no Brasil, sendo o caminho escolhido pelo governo: a prevenção. Diversas ações têm sido realizadas para prevenir doenças cardíacas e respiratórias pelo Programa Saúde da Família a fim de promover a mudança de hábitos, contudo é necessário o preparo para o atendimento em casos de ocorrências.
+
+A população do Distrito Federal, é majoritariamente urbana, possuindo cerca de 4,4\% de população rural, devido a sua localização geográfica e o planejamento prévio da cidade, é pouco abordada a dificuldade de locomoção no perímetro, contudo, em horários de pico, grandes acidentes entre veículos e em localidades que o planejamento foi abandonado, o socorro é prejudicado. (OLIVEIRA,2007).
+\section{Justificativa}
+
+O atendimento pré-hospitalar é o procedimento feito após a ocorrência de um agravo à saúde da vítima \cite{SBC}. A hora de ouro consiste na primeira hora de atendimento à vítima o que pode ser determinante para o salvamento.\cite{PQA} 
+
+As principais ocorrências de atendimento pré-hospitalar de acordo com o Corpo de Bombeiros podem ser vistas na Figura 1. Segundo esses dados aproximadamente 15\% das ocorrências atendidas são os casos de problemas cardíacos, respiratórios e hemorragias.
+
+ \begin{figure}[ht]
+	\centering
+		\includegraphics[keepaspectratio=true,scale=0.5]{figuras/bombeiros.eps}
+	\caption{Gráfico do número de atendimentos pré-hopitalar do corpo de bombeiros}
+\end{figure}
+
+O tempo de atendimento à vítima de PCR (Parada Cardiorrespiratória) é extremamente importante. Receber a RCP (Ressucitação Cardiopulmonar) a tempo pode ser determinante para a sobrevivência do paciente, a cada minuto que passa a chance de sobrevivencia cai de 7 a 10\% \cite{SBC}. 
+
+O DEA (Desfibrilador externo automático) é um equipamento portátil, que interpreta o ritmo cardíaco do paciente, seleciona automaticamente o nível de energia e carrega automaticamente, e tudo que o operador precisa fazer é pressionar o botão de descarga, ele é um equipamento simples que os leigos podem usar com uma simples instrução e é de grande importância no atendimento à PCR, uma vez que grande parte delas ocorre em ambiente extra-hospitalar, como residencia e em lugares públicos \cite{SBC}.
+
+O uso do DEA, assim que disponível, permite maior sucesso no atendimento, pois a maioria das vítimas que tem parada cardíaca em ambiente extra-hospitalar se encontra em FV (Fibrilação Ventricular) \cite{SBC}.
+
+Devido essa importância é possível constatar que há uma necessidade de atendimento mais eficaz nesses casos. Um grande problema que existe em um salvamento é o deslocamento da unidade de salvamento até o local do acidente. Muitas vezes esse caminho está obstruído devido trânsito ou dificuldades de acesso. 
+
+Este projeto tem como objetivo solucionar os problemas referentes a socorros emergenciais, com a intenção de realizar procedimentos que são simples para que não haja a necessidade de um profissional da área e se forem realizados no menor tempo possível, podem aumentar a chance de sobrevivência do paciente. 
+
+O EmerVant vem com a proposta de melhorar esse tempo entre o acidente e a chegada do socorro através do carregamento de alguns equipamentos. De acordo com \cite{DEE}, o uso desse tipo de sistema acarreta no aumento da taxa de sobrevivência, no tempo de resposta reduzido e no aumento da eficiência.
+
+\section{Descrição do Problema}
+	A problemática está em deslocar-se em grandes centros urbanos, pois sempre se está sujeito a trânsitos e dificuldades de acesso. Como grande parte das paradas cardiorrespiratórias ocorre em ambiente extra-hospitalar, como residências e centros urbanos \cite{SBC} tem-se a necessidade de agilizar os atendimentos de socorro pré hospitalar. 
+
+\section{Objetivos}
+\subsection{Objetivo geral}
+	Criar um VANT (veículo aéreo não tripulado) para ajudar a solucionar com mais eficiência o atendimento em situações de emergências no Distrito Federal.
+\subsection{Objetivos epecíficos}
+\begin{itemize}
+  \item Projetar um hexacóptero
+  \item Projetar uma unidade central de monitoramento
+	\item Projetar sistema de gestão da informação
+	\item Definir fonte energética
+	\item Definir estratégia do voo
+	\item Definir controle do drone
+\end{itemize}
+
+\section{Metodologia}
+Nessa subseção será abordada a metodologia de trabalho definida para o projeto levando em consideração o seu gerenciamento e a estrutura da equipe.
+\subsection{Metodologia de Gerenciamento}
+
+Dentro das possibilidades de gerenciamento de projetos, existem duas metodologias que foram discutidas em grupo que poderiam ser adotadas para o projeto do EmerVANT, a metodologia SCRUM ou a metodologia PMBOK(Project Management Body of Knowledge). Diante do trabalho técnico que deve ser realizado e a quantidade de pessoas envolvidas, o método escolhido foi o do PMBOK porque possibilita e facilita a divisão de trabalho para grupos inexperientes, com menor capacidade variação de mudanças e cria uma cultura de controle que possibilita a elaboração de um projeto altamente crítico. Dentro do PMBOK existem nove áreas de conhecimento (Figura 2) que permitem o gerenciamento do projeto como um todo dentro das quatro estruturas da equipe que serão analisadas posteriormente.
+
+ \begin{figure}[ht]
+	\centering
+		\includegraphics[keepaspectratio=true,scale=0.5]{figuras/PMBOK.eps}
+	\caption{Áreas de conhecimento das fases do PMBOK.}
+\end{figure}
+
+Com o gerenciamento destas nove áreas foi possível definir diretrizes sobre o gerenciamento dos cinco grupos de processos essenciais: iniciação, execução, planejamento, controle e finalização. Os principais documentos criados a partir deste processo serão o TAP(termo de abertura), EAP(Estrutura Analítica de Projeto), plano de gerenciamento de projeto, riscos, comunicações, aquisições e estimativa de custos.
+
+A Figura 3 mostra como funciona o fluxo detalhado das macroatividades do PMBOK e é o processo que está sendo seguindo neste trabalho:
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[keepaspectratio=true,scale=0.5]{figuras/pmbok-resumido.eps}
+	\caption{Fluxo resumido - PMBOK.}
+\end{figure}
+
+\subsection{Estrutura da Equipe}
+A equipe do projeto, formada por 25 integrantes, foi subdivida em quatro áreas de pesquisas, que são elas: estrutura do VANT, comunicação, controle e fonte energética. As áreas são coordenadas por um subgerente, um para cada área, e ambos são supervisionados e administrados por um gerente geral, Henrique Berilli, e uma gerente de qualidade, Emilie Morais.
+
+A equipe responsável pela estrutura do VANT, gerenciada por Renan Santos, é responsável pelo estudo e seleção dos a serem utilizados, processo de fabricação, sensores, unidade central de processamento e custos do VANT. Esta equipe também é responsável pelo desenho 3D das peças do VANT na ferramenta CATIA.  
+	
+Coordenada por Leonardo Cambraia, a área responsável pela comunicação, abrangerá o projeto da central de monitoramento, sistema de gestão e informação e custos.
+	
+A área de controle, gerenciada por Jennifer Cavalcante, estuda a central de controle, o comando do VANT via orientação GPS (Global Positioning System) e pelo link de comunicação VANT - Central de monitoramento.
+	
+A quarta área, responsável pela fonte energética, e gerenciada por Bárbara Hélen, tem como responsabilidade escolher a fonte de energia, avaliar o consumo energético e autonomia e os custos.
+	
+A Figura 4 ilustra a estrutura de gerenciamento (hierárquica) do projeto. Foi tomado um cuidado para que nenhum componente da equipe ficasse ocioso. Nota-se que a qualquer momento algum membro poderá ser realocado de modo a melhor suprir as necessidades do projeto.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[keepaspectratio=true,scale=0.5]{figuras/equipe.eps}
+	\caption{Estrutura gerencial do projeto.}
+\end{figure}
+
+\section{Plano de Comunicação}
+O grupo organizou o plano de comunicação em reuniões presenciais semanais. Todas as reuniões são discursões sobre a temática do projeto onde sempre há o relato, através de ata de reunião, dos assuntos e decisões tomadas. 
+
+Reuniões presenciais predefinidas:
+\begin{itemize}
+	\item Segundas (16h às 18h)
+	\item Quartas (16h às 18h)
+\end{itemize}
+
+Além das reuniões presenciais, há a comunicação e avisos via grupo nas seguintes ferramentas:
+\begin{itemize}
+	\item Facebook
+	\item WhatsApp
+	\item Google Drive
+	\item Trello
+\end{itemize}
+
+\section{Ferramentas Computacionais}
+
+\textbf{FACEBOOK}:
+Foi criado um grupo nesta rede social contendo os 25 membros, denominado de “PI1 Grupo 4 (VANT)”. Neste grupo discutido a possibilidade de futuras reuniões extras, é compartilhado arquivos produzidos fora das reuniões, assim como referências que podem auxiliar no desenvolvimento do projeto. Enquetes são feitas para discutir assuntos gerais pertinentes ao projeto. 
+
+\textbf{WHATSAPP}: 
+Neste aplicativo os integrantes comunicam entre si de maneira direta para avisos importantes, pequenas discursões e algumas decisões que não necessitam de uma reunião presencial.
+
+\textbf{GOOGLE DRIVE}: 
+Nesta pasta online, os 25 integrantes do grupo tem liberdade para modificar e compartilhar o desenvolvimento do trabalho. Todo o material de pesquisa, atas, relatórios, imagens, questionários e planos de trabalho são disponibilizados, para que todos tenham acesso as informações de cada área, visto que todas as áreas são interligadas.
+
+\textbf{TRELLO}:
+Nesta ferramenta organiza-se de tarefas e eventos de uma forma muito dinâmica e funcional, com ela é possível dividir as atividades entre os integrantes, fazer comentários sobre cada função empregada e ter um controle sobre tudo que já foi desenvolvido, os afazeres que estão em fase de desenvolvimento e tudo que está com pendencias.
+
+\textbf{LATEX}:
+Nesta ferramenta edita-se os relatórios e resultados do projeto de uma forma mais organizada e com um layout melhor apresentável.
+
+
+
+
+
+
+%O mercado referente aos áudiobooks tem crescido
+%
+%No capítulo \ref{cap2}, é apresentado os objetivos pretendidos para o qual este trabalho %foi motivado.%
+%
+%No capítulo \ref{cap3}, é apresentada toda a revisão bibliográfica onde foram revistos %monografias, dissertações, livros, publicações em \textit{websites} e especificações %necessários para o entendimento e desenvolvimento do projeto.%
+%
+%No capítulo \ref{cap4}, serão apresentados todas as etapas realizadas para a especificação %do formato e para o desenvolvimento do Editor bem como as ferramentas utilizadas com %suporte no processo de desenvolvimento e pesquisa.%
+%
+%No capítulo \ref{cap5}, serão apresentados os resultados obtidos no projeto, mostrando o %arquivo gerado pelo Editor.%
+%
+%No capítulo \ref{cap6}, 
+%E, por fim, no capítulo \ref{cap7},
+
+%Este documento apresenta considerações gerais e preliminares relacionadas 
+%à redação de relatórios de Projeto de Graduação da Faculdade UnB Gama 
+%(FGA). São abordados os diferentes aspectos sobre a estrutura do trabalho, 
+%uso de programas de auxilio a edição, tiragem de cópias, encadernação, etc.
+

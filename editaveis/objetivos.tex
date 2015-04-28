@@ -1,75 +1,85 @@
 \chapter{Desenvolvimento}\label{cap2}
  Nessa seção será apresentado o escopo do projeto e a proposta de solução.
 \section{Escopo}
-Para definição do escopo do projeto foram analisados os seguintes aspectos: local de atuação, situações de socorro pré-hospitalar, viabilidade dos itens a serem levados pelo VANT, elementos estruturais e planejamento e estratégia de voo do VANT e comunicação com o usuário.
-
+Para definição do escopo do projeto foram analisados os seguintes aspectos: Local de atuação, localização da apoio, situações de socorro pré-hospitalar, viabilidade dos itens a serem levados pelo VANT, elementos estruturais e planejamento de atuação e estratégia de voo do VANT e o método de comunicação com o usuário.
 \begin{description}
   \item[Local de Atuação] \hfill 
   	\begin{itemize}
-  		\item Locais de difícil acesso no DF seja por natureza ou circunstância.
+  		\item Locais de difícil acesso no DF seja por natureza ou circunstância e será acionado apenas quando houver necessidade.
+
   	\end{itemize}
   \item[Tipo de emergência] \hfill 
   	\begin{itemize}
-  		\item Parada Cardíaca
-		\item Parada Respiratória
-		\item Hemorragia Externa
+  		\item Paradas/Ataques Cardíacos;
+		\item Paradas Respiratórias;
+		\item Hemorragias Externas.
   	\end{itemize}
   \item[Equipamentos Utilizados para salvamento] \hfill \\
   	Para definir os itens a serem levados foi realizada uma análise de viabilidade levando em consideração a utilização dos equipamentos por pessoas sem conhecimento em salvamento e a possibilidade de carga útil do VANT.
   	\begin{itemize}
-  		\item Kit primeiro socorros
-		\item Desfibrilador Automático
-		\item Reanimador ventilatório manual
-		\item Kit de hemorragias externas
+  		\item Kit primeiro socorros;
+		\item Desfibrilador Automático;
+		\item Reanimador ventilatório manual;
+		\item Kit para hemorragias externas.
   	\end{itemize}
   \item[Distância de Operação] \hfill 
   	\begin{itemize}
+<<<<<<< HEAD
   		\item Haverá uma única central de controle
   		\item Velocidade máxima do drone: 70 km/h
   		\item O VANT operará em um raio de 20km. Sendo o centro do raio a ambulância onde se encontra o drone.
+=======
+  		\item Haverá uma única central de controle;
+  		\item Velocidade máxima do drone: 70 km/h;
+  		\item O VANT operará em um raio de 20 km. Sendo que o centro do raio é a ambulância, que vai ser de onde o VANT irá partir.
+>>>>>>> Emilie
   	\end{itemize}
   \item[Sinais vitais que serão monitorados] \hfill 
   	\begin{itemize}
-  		\item Eletrocardiograma
+  		\item Eletrocardiograma.
   	\end{itemize}
   \item[Projeto mecânico estrutural] \hfill 
   	\begin{itemize}
-  		\item Asa rotatória
-		\item Elétrico
+  		\item Asa rotatória;
+		\item Elétrico.
   	\end{itemize}
   \item[Materiais] \hfill 
   	\begin{itemize}
-  		\item Polímeros compostos
-		\item Fibra de carbono
+  		\item Polímeros compostos;
+		\item Fibra de carbono.
   	\end{itemize}
   \item[Controle] \hfill 
   	\begin{itemize}
-  		\item Controle automático comandado pela central de comunicação. (Rádio frequência)
+  		\item Controle automático comandado pela central de comunicação. (Rádio frequência).
   	\end{itemize}
   \item[Comunicação entre equipe de paramédicos e usuário] \hfill 
   	\begin{itemize}
-  		\item Câmera e sistema de áudio. Sendo que, o video será apenas para o paramédico da central e a comunicação via áudio para ambos.
-  		\item O usuário apenas escutará as instruções, se comunicando apenas através do áudio.
+  		\item Câmera e sistema de áudio. Sendo que, o vídeo será apenas para o paramédico da central e a comunicação via áudio para ambos;
+  		\item O usuário apenas escutará as instruções, comunicando-se apenas através do áudio.
   	\end{itemize}
   \item[Sensores] \hfill 
   	\begin{itemize}
-  		\item Eletrocardiograma para medir os sinais vitais
-		\item GPS - Utilizado para o deslocamento e localização do VANT
-		\item Acelerômetro - Utilizado para obter uma localização mais apurada
-		\item Giroscópio - Refinamento na localização
-		\item Controlador A2 DJI
+  		\item Eletrocardiograma para medir os sinais vitais;
+		\item GPS (u-blox LEA-6H.)- Utilizado para o deslocamento e localização do VANT;
+		\item Acelerômetro e Magnetometro (ST Micro LSM303D) - Utilizado para obter uma localização mais apurada;
+		\item Giroscópio (ST Micro L3GD20) - Refinamento na localização;
+		\item Controladora Pixhawk (PX4).
   	\end{itemize}
   \item[Projeto unidade central de processamento] \hfill 
   	\begin{itemize}
-  		\item Controlador A2 DJI
+  		\item Controladora Pixhawk (PX4).
   	\end{itemize}
   \item[Conversão e armazenamento de energia] \hfill 
   	\begin{itemize}
-  		\item Bateria
+  		\item Bateria de polímeros de Lítio (LiPo).
   	\end{itemize}
   \item[Estimação de consumo energético e autonomia] \hfill 
   	\begin{itemize}
+<<<<<<< HEAD
   		\item 50 minutos de voo
+=======
+  		\item 50 minutos de voo.
+>>>>>>> Emilie
   	\end{itemize}
 \end{description}
 
@@ -83,13 +93,13 @@ A EAP foi a forma escolhida pela equipe de desenvolvimento do projeto EmerVant p
 
 Para a criação da EAP do EmerVant, foi observado que dentro do projeto há varias áreas de atuação. Assim os níveis mais gerais foram definidos por essas áreas de atuação que são:
 \begin{itemize}
-\item Gerência de Projetos
-\item Iniciação
-\item Estrutura do VANT
-\item Comunicação
-\item Controle
-\item Fonte Energética
-\item Encerramento
+\item Gerência de Projetos;
+\item Iniciação;
+\item Estrutura do VANT;
+\item Comunicação;
+\item Controle;
+\item Fonte Energética;
+\item Encerramento.
 \end{itemize}
 
 \begin{figure}[ht]

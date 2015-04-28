@@ -1,0 +1,41 @@
+O EmerVant consiste em um sistema de assistência emergencial através da utilização de um VANT.	
+
+O grande potencial dos drones tem sido explorado em inúmeras implementações militares e civis. Entre os vários VANTs, estes de pequena escala são atraentes para o meio acadêmico, devido ao seu pequeno tamanho, as capacidades de voo único, excelente dirigibilidade e baixo custo. \cite{SDM}.
+
+O VANT escolhido para a aplicação foi o multirotor de oito hélices, conhecido como octocóptero. Usando um essa configuração a força de sustentação é melhor dividida entre os múltiplos motores possibilitando carregar uma maior carga útil e tendo uma maior estabilidade.
+
+O GPS é o sensor de maior importância deste projeto, pois as informações fornecidas serialmente por esse componente auxiliam não só na estabilização da aeronave mas no controle e na locomoção do VANT até o local desejado.
+
+Em uma situação normal o desempenho do piloto automático excede a que é controlada por humanos, e mesmo em situações mais desafiadoras sua performance é equivalente.
+
+O projeto mecânico estrutural será constituído de polímeros compostos e fibra de carbono. O VANT será de asa rotatória e utilizará alguns sensores que serão processados por sistemas embarcados dedicados ao voo. 
+
+O controle será feito através de um sistema automático com o uso de Global Position System (GPS), utilizado para deslocamento e localização. Através desse sensor o piloto automático tem acesso às informações em tempo real, utilizando-as ele consegui guiar-se, dessa maneira ele sabe exatamente seu lugar no espaço e sua localização à obstáculos. Para gerar essas informações são necessários: giroscópios, acelerômetro, sensores magnéticos e eletromagnéticos, sensores visuais, sensores ultrassom, infravermelhos, micro-ondas e gamas de rádio. \cite{UDE}
+
+A partir disso, o tempo de voo foi estimado em 50 (cinquenta) minutos de voo e a velocidade de deslocamento do veículo será de aproximadamente 70km/h e com raio de atuação de 20km da ambulância onde o mesmo está, a priori, acoplado.
+
+As ambulâncias dos serviços de atendimento seguem padrões, as do distrito federal assim como as de outros estados é um veículo tipo furgão com carroceria em aço e original de fábrica, longo, de teto alto adaptado para ambulância, com porta lateral deslizante e portas traseiras. \cite{licitacao}. Com dimensões: 
+
+1) Comprimento total mínimo = 5.900 mm
+
+2) Distância mínima entre eixos = 4.010 mm
+
+3) Capacidade mínima de carga = 1.480 kg
+
+4) Comprimento mínimo do salão de atendimento = 3500 mm
+
+5) Altura interna mínima do salão de atendimento = 1.800 mm
+
+6) Largura interna mínima = 1.500 mm
+
+7) Largura externa máxima = 2.500 mm
+
+Para a viabilidade do uso dos VANTS nas ambulâncias seria necessário fazer pequenas alterações nelas. Seria necessário a instalação de racks de teto em todas as ambulâncias e pontos de energia neles para a integração do drone. Seria atualizado o sistema de comunicação que todas as ambulâncias possuem, seria criado a opção de acionar o VANT, com isso cria-se a possibilidade de utilizar ele apenas quando necessário. Mesmo que a ambulância não estivesse com ele acoplado ela iria acionar algum que estivesse dentro do raio de atuação para a prestação de apoio.
+
+Quando acionado a central, que fica em um ponto estratégico do distrito federal, irá receberá a informação referente a necessidade e irá passar de forma serial para o drone as coordenadas referentes  ao local e situação da(s) vítima(s).
+
+O monitoramento do VANT ocorrerá através de um sistema de controle automático por rádio frequência que será monitorado e comandado pela central de monitoramento. Ele e terá uma câmera e um sistema de áudio.
+
+O VANT, através da câmera e do sistema de áudio estabelecerá a comunicação entre o usuário,a ambulância e a central de monitoramento. O vídeo será apresentado apenas para o paramédico da central e o áudio para a central e a ambulância. O contato do usuário será apenas com o áudio.
+
+O paramédico dará orientações para quem está com a vítima através do sistema de comunicação do EmerVant. Com a câmera os paramédicos da central de comando poderá visualizar p a situação, dar instruções para utilizar o desfribilador, o reanimador ventilatório manual ou as gases em casos de hemorragia externa. 

@@ -1,15 +1,18 @@
 \chapter[Introdução]{Introdução}\label{cap1}
 	Essa seção aborda sobre o contexto do projeto, o problema a ser resolvido e a metodologia para desenvolvimento do trabalho. 
 \section{Contexto}
+  \input{editaveis/contexto}
 
-As doenças cardio vasculares fazem parte de condições que predispõe uma pessoa à maiores riscos de desenvolver e sofrer doenças do coração e dos vasos. Alguns dos fatores de risco para tais problemas são: hábitos alimentares ruins, fumo, obesidade, sedentarismo, diabetes e idade avançada. \cite{ceolin}. Segundo dados do Ministério da Saúde a população Distrito Federal tem envelhecido e mais de 33\% possui algum tipo de doença crônica. \cite{portal}
+\section{Descrição do Problema}
 
-As doenças crônicas são responsáveis por mais de 72\% de mortes no Brasil, sendo o caminho escolhido pelo governo: a prevenção. Diversas ações têm sido realizadas para prevenir doenças cardíacas e respiratórias pelo Programa Saúde da Família a fim de promover a mudança de hábitos, contudo é necessário o preparo para o atendimento em casos de ocorrências.
-
-A população do Distrito Federal, é majoritariamente urbana, possuindo cerca de 4,4\% de população rural, devido a sua localização geográfica e o planejamento prévio da cidade, é pouco abordada a dificuldade de locomoção no perímetro, contudo, em horários de pico, grandes acidentes entre veículos e em localidades que o planejamento foi abandonado, o socorro é prejudicado. (OLIVEIRA,2007).
+A partir do contexto apresentado o problema a ser solucionado é:
+Demora no socorro pré-hospitalar dadas as dificuldades de acesso das ambulâncias, por natureza ou por circunstância.
+  
 \section{Justificativa}
 
-O atendimento pré-hospitalar é o procedimento feito após a ocorrência de um agravo à saúde da vítima \cite{SBC}. A hora de ouro consiste na primeira hora de atendimento à vítima o que pode ser determinante para o salvamento.\cite{PQA} 
+O atendimento pré-hospitalar é o procedimento feito após a ocorrência de um agravo à saúde da vítima \cite{SBC} sendo esse um atendimento de alta complexidade, 
+devido ao fato de algumas ocorrências apresentarem riscos de vida ao paciente, qual requer um atendimento muito ágil e eficaz, durante a primeira hora após o ocorrido, 
+podendo este ser determinante para sobrevivência do mesmo.\cite{PQA} 
 
 As principais ocorrências de atendimento pré-hospitalar de acordo com o Corpo de Bombeiros podem ser vistas na Figura 1. Segundo esses dados aproximadamente 15\% das ocorrências atendidas são os casos de problemas cardíacos, respiratórios e hemorragias.
 
@@ -25,18 +28,18 @@ O DEA (Desfibrilador externo automático) é um equipamento portátil, que inter
 
 O uso do DEA, assim que disponível, permite maior sucesso no atendimento, pois a maioria das vítimas que tem parada cardíaca em ambiente extra-hospitalar se encontra em FV (Fibrilação Ventricular) \cite{SBC}.
 
-Devido essa importância é possível constatar que há uma necessidade de atendimento mais eficaz nesses casos. Um grande problema que existe em um salvamento é o deslocamento da unidade de salvamento até o local do acidente. Muitas vezes esse caminho está obstruído devido trânsito ou dificuldades de acesso. 
+Dessa forma, um grande  problema  que existe em um salvamento é o deslocamento da unidade de salvamento até o local do acidente. Muitas vezes esse caminho está obstruído devido a trânsito, dificuldades de acesso como em casos de favelas e invasões ou muitas vezes locais distantes das unidades de pronto-atendimento que estão sobre carregadas. Essa obstrução de modo geral, causa atraso no socorro.
 
-Este projeto tem como objetivo solucionar os problemas referentes a socorros emergenciais, com a intenção de realizar procedimentos que são simples para que não haja a necessidade de um profissional da área e se forem realizados no menor tempo possível, podem aumentar a chance de sobrevivência do paciente. 
+O  EmerVant  vem  com a  proposta  de otimizar  o tempo  entre  a ocorrência do acidente  e a chegada  do socorro, através do uso de um VANT capaz de carregar de equipamentos que auxiliem o pré-atendimento hospitalar. 
 
-O EmerVant vem com a proposta de melhorar esse tempo entre o acidente e a chegada do socorro através do carregamento de alguns equipamentos. De acordo com \cite{DEE}, o uso desse tipo de sistema acarreta no aumento da taxa de sobrevivência, no tempo de resposta reduzido e no aumento da eficiência.
+Pinto e Cassemiro (\citeyear{pinto}) afirmam que ``A utilização de Veículos Aéreos Não-Tripulados (VANTs) tem se mostrado uma excelente alternativa, já que dispõe de uma flexibilidade maior e um custo baixo comparado às soluções tradicionais.''
 
-\section{Descrição do Problema}
-	A problemática está em deslocar-se em grandes centros urbanos, pois sempre se está sujeito a trânsitos e dificuldades de acesso. Como grande parte das paradas cardiorrespiratórias ocorre em ambiente extra-hospitalar, como residências e centros urbanos \cite{SBC} tem-se a necessidade de agilizar os atendimentos de socorro pré hospitalar. 
+Assim, esse projeto tem como objetivo solucionar os problemas referentes à socorros emergenciais que são causados pela distância entre socorristas e pacientes, realizando através de dois equipamentos e um kit, que irão ser transportados pelo VANT, procedimentos rápidos, onde não será necessária a presença física de um socorrista, e que se forem realizados no menor tempo possível, podem aumentar a chance de sobrevivência do paciente.
 
 \section{Objetivos}
 \subsection{Objetivo geral}
-	Criar um VANT (veículo aéreo não tripulado) para ajudar a solucionar com mais eficiência o atendimento em situações de emergências no Distrito Federal.
+Projetar um VANT a fim de aumentar a eficiência no atendimento emergencial no Distrito Federal de paradas cardiorrespiratórias e pequenas hemorragias.
+
 \subsection{Objetivos epecíficos}
 \begin{itemize}
   \item Projetar um hexacóptero

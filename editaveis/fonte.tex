@@ -1,7 +1,7 @@
 
 Para que o um veículo aéreo não tripulado funcione de forma completa, é necessário definir um sistema de fornecimento de energia eficiente, para que o mesmo consiga suprir todas as necessidades dos sistemas que terão funções de controle e comando.
 
-\subsection{Bateria}
+\subsubsection{Bateria}
 
 Uma bateria é um dispositivo capaz de armazenar energia química e transformá-la em energia elétrica. A bateria é entendida geralmente como algo que possui duas ou mais células elétricas individuais, e existem dois tipos básicos de células: primária e secundária \cite{gibbs}. As primárias, identificadas como células normais, não são recarregáveis e devem ser descartadas quando esgotadas. Já as secundárias, são recarregáveis, como a bateria do tipo polímero de lítio, que foi a escolhida para atuar neste projeto, e será apresentada posteriormente. 
 
@@ -11,7 +11,7 @@ Além disso, deve-se também conhecer a densidade de energia (relação entre qu
 
 $Energia(Wh)= Tensão(V)*Capacidade(Ah)$
 
-\subsection{Bateria de polímeros de Lítio (Li-Polymer)}
+\subsubsection{Bateria de polímeros de Lítio (Li-Polymer)}
 
 Baterias de polímeros de Lítio (LiPo) são aquelas que contem seus eletrólitos retidos em um polímero sólido, 
 composta por várias células secundárias finas idênticas ligadas em paralelo, o que aumenta sua capacidade de 
@@ -30,7 +30,7 @@ análise é a tolerância para a sobrecarga, nas baterias de Lítio-polímero es
 excesso de energia concentrado na bateria que ocasionaria a perda de rendimento ou até a perda total da bateria.
 \cite{costa}
 
-\subsubsection{Características bateria LiPo 6s}
+\subsubsubsection{Características bateria LiPo 6s}
 
 O funcionamento básico da célula de bateria do tipo LiPo consiste em eletrólitos de sais de lítio retidos
 em um polímero sólido com óxido de polietileno e o poliacrilonitrilo ao invés de solventes tornando-as
@@ -46,9 +46,47 @@ de taxa de carga, utilização de balanceador de células evitando que a carga s
 terminais principais do pack sem controle de voltagem, além de evitar o procedimento de carga ao identificar 
 que as células do pack estão danificadas. \cite{gibbs}
 
-\subsubsection{Análise de Custos}
+\subsubsubsection{Recarga}
 
-ões e pesquisas que culminaram na escolha da tecnologia lítio polímero (LiPO) para utilização na parte da alimentação energética do VANT. Essa tecnologia se sobressaiu em relação a todas outras estudadas por baterias que apresentam baixo peso, alta tensão, além de sua capacidade de fornecer elevadas correntes ao circuito e já ser uma tecnologia amplamente utilizada no meio aeroespacial.
+A carga de uma bateria é explicada de forma simples por um fenômeno químico-físico que está envolvido com a eletrólise. \cite{gibbs}
+
+Entretanto, essa simplicidade não deve ser subestimada, pois existem detalhes nesse tipo de bateria (Lipo 6s) que precisam ser levados em consideração dependendo da sua forma de uso.
+
+Para o recarregamento da bateria que alimentará o VANT, será utilizada uma plataforma de recarga que funcionará diretamente ligada à  central de energia da estação de controle e fornecerá a energia necessária para o recarregamento da bateria quando o VANT necessitar.
+
+A plataforma funcionará a partir de cabos específicos que estarão ligados a central energética da estação de controle. Assim, toda vez que o VANT retornar para a central alguma pessoa capacitada conectará o mesmo à plataforma de recarga. Ao aviso de recarga da bateria do VANT, a pessoa encarregada pela central desconectará os cabos.
+
+A bateria de polímero de Lítio caso esteja acima da temperatura normal na hora da recarga, deve ser levada para um local afastado e ventilado, para que sua temperatura normalize.A maioria dos acidentes com baterias ocorrem durante a recarga. A bateria de lítio polimerizado em comparação com as outras tem um baixo risco de acidente nesse requisito. \cite{gibbs}
+
+As baterias de Lítio Polimerizado tem dois requerimentos em relação as suas células, primeiramente a carga deve ser limitada a um valor seguro e em segundo lugar, a voltagem da célula não deve nunca ultrapassar 4.20 Vpc (Volts por célula). \cite{gibbs}
+
+O carregador Li-PO é um dispositivo limitador de tensão que é semelhante ao sistema de chumbo-ácido. A diferença está em uma tensão mais elevada por célula, tolerância de tensão mais apertado e a ausência de carga de flutuação em plena carga.
+
+As baterias de polímero de Lítio não podem ser carregadas por qualquer tipo de carregador, portanto, o escolhido para atuar no sistema de recarga do EmerVant foi o carregador iMax B6 (figura \ref{fig:carregador1}), se adequa de uma forma que carrega e balanceia adequadamente vários tipos de bateria de lítio, tais como a utilizada neste projeto (LiPo 6s), Li-íon e a série de bateria LiFe.
+
+
+ \begin{figure}[h!]
+    \centering
+	\includegraphics[keepaspectratio=true,scale=0.4]{figuras/carregador1.jpg}
+    \caption{Carregador iMax B6. Fonte: \cite{carregador1}}
+    \label{fig:carregador1}
+\end{figure}
+
+
+Segundo o manual do usuário iMax B6 \cite{ibmax}, independente de qual seja a bateria de lítio usada, não será necessário se conectar a um balanceador externo para efetuar a carga de balanceamento, pois o mesmo emprega um balanceador de tensão de célula individual. Além disso, o B6 monitora e balanceia individualmente cada célula da bateria, onde apresenta uma mensagem de erro e é automaticamente interrompido caso apresente uma tensão anormal de qualquer célula individual. 
+
+A figura a seguir mostra o menu do B6, que possui uma interface fácil de se interpretar, onde indica o carregamento e os ciclos em um processo simples, podendo ser feito de maneira rápida e precisa. O carregador não vem com a fonte de alimentação, porém contém um conector de entrada de CC que possui um \textit{plug} com garras tipo jacaré.
+
+ \begin{figure}[h!]
+    \centering
+	\includegraphics[keepaspectratio=true,scale=0.5]{figuras/manual.png}
+    \caption{Menu do iMax B6. Fonte: \cite{ibmax}}
+\end{figure}
+
+
+\subsubsubsection{Análise de Custos}
+
+Considerando os requisitos estipulados  no escopo do projeto foram levantadas discussões e pesquisas que culminaram na escolha da tecnologia lítio polímero (LiPO) para utilização na parte da alimentação energética do VANT. Essa tecnologia se sobressaiu em relação a todas outras estudadas por baterias que apresentam baixo peso, alta tensão, além de sua capacidade de fornecer elevadas correntes ao circuito e já ser uma tecnologia amplamente utilizada no meio aeroespacial.
 
 Durante a escolha da bateria foram analisadas várias empresas ao redor de todo o mundo, sendo elas:
 
@@ -92,7 +130,10 @@ As informações contidas na tabela foram retiradas dos sites de vendas dos fabr
 \nocite{bateria9}
 \nocite{bateria10}
 
-\subsection{Conceitos e características para obter a autonomia do EmerVant}
+
+\subsubsection{Conceitos e características para obter a autonomia do EmerVant}
+
+Os conceitos foram baseados em \cite{charlesa}, \cite{charlesb} e \cite{gibbs}.
 
 \textbf{-Densidade de energia} (wh/kg) - é a relação entre a quantidade de energia contida em um dado sistema ou região do espaço e o volume ou massa, dependendo do contexto, deste sistema/região.
 
@@ -116,7 +157,7 @@ As informações contidas na tabela foram retiradas dos sites de vendas dos fabr
 	
 	Vida útil do EmerVant: $500-1000 vezes$
 
-\textbf{-Autonomia} - é a duração em horas que funcionará a bateria sem recarga. Onde:
+\textbf{-Autonomia} - é a duração em horas que funcionará a bateria sem recarga. \cite{esteban}. Onde:
 
 E - Energia total armazenada na bateria
 

@@ -1,4 +1,4 @@
-\subsection{Sistema de Comunicação via Rádio Frequência}
+\subsubsection{Sistema de Comunicação via Rádio Frequência}
 
  A comunicação da central de atendimento e o VANT será através de um link de radiofrequência, será criado um canal na faixa das VLF (Very Low Frequency).
 
@@ -22,7 +22,7 @@ definido na seção \ref{escopo} - Escopo, a viabilidade e eficiência na implan
 extremamente alta. Aonde o sinal emissor será posicionado na torre de TV cobrindo toda a 
 área de atuação com um boa qualidade de sinal. 
 
-\subsection{Especificação do Projeto da Comunicação do Vant}
+\subsubsection{Especificação do Projeto da Comunicação do Vant}
 
 \begin{itemize}
  \item Piloto automático guiará o VANT até a emergência: 
@@ -35,7 +35,7 @@ extremamente alta. Aonde o sinal emissor será posicionado na torre de TV cobrin
 
 \end{itemize}
 
-\subsubsection{Comunicação com o Pixhawk}
+\subsubsubsection{Comunicação com o Pixhawk}
 O controle e configura\c{c}\~ao do voo do VANT \'e gerenciado pelo \textit{Ground Control Station}, em português, 
 esta\c{c}\~ao de controle em solo. Devido à facilidade na customização e a compatibilidade com a placa controladora adotada pelo projeto, Pixhawk, foi escolhido o GCS Mission Planner mantido pelo projeto \textit{open-source  APM autopilot}. 
 \cite{gcs}
@@ -68,7 +68,20 @@ A plataforma a ser utilizado será o Microsoft Windows devido à grande utiliza�
 além de oferecer maior compatibilidade com os recursos utilizados, obedecendo, por exemplo, os requisitos
 do sistema de comunicação com o controlador, o Mission Planner. 
 
-\subsubsection{Comunicação do usuário com o VANT}
+\subsubsubsection{Protocolo de erros}
+	
+Para um funcionamento seguro é necessário ter em mente que podem vir a existir condições adversas as planejadas. Tendo isso em vista foi estabelecido um protocolo de erros para situações que podem vir a ocorrer durante um voo do VANT.
+
+\begin{itemize}
+ \item Perda de sinal: Em caso de perda de sinal o VANT deverá retornar a seu ponto de origem imediatamente.
+ 
+ \item Bateria fraca: Ao chegar em 25\% restante de bateria o VANT irá retornar para a central imediatamente.
+
+ \item Perda de potência: Em caso de perda de potência por parte do motor, o VANT procurará um local para pousar imediatamente.
+
+\end{itemize}
+
+\subsubsubsection{Comunicação do usuário com o VANT}
 Nessa subseção é tratada a comunicação da central com o VANT e do cidadão com o VANT.
 Nessa comunicação alguns passos devem ser seguidos, são eles:
 

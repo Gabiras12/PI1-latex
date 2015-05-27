@@ -1,3 +1,19 @@
+\subsubsection{Central de Atendimento}
+A Central de Atendimento/ Estação Base do VANT, será um local, qual será responsável por controlar toda a operação de atuação do VANT, desde o atendimento da chamada, ao desenvolvimento do plano de voô do mesmo. É responsabilidade do controlador auxiliar no uso do desfibrilador em casos de emergência. Sendo que, tal Base, estará sempre acompanhando o atendimento ao paciente e monitorando o funcionamento do VANT, através da alta gama de sensores e câmeras espalhadas pelo equipamento.
+
+Não há qualquer requerimento especificado para o uso do software de controle, logo um computador padrão com capacidade média de processamento é o suficiente para o uso do software, se vê a importância de destacar que o computador deve possuir uma placa de rede para acesso à internet. Para o computador, foi escolhido um processador Intel I5 e 8GB de memória RAM, com essas configurações é garantido desempenho suficiente com um preço não elevado.  
+
+O atendente que controlará o VANT e atenderá os chamados deve ser um médico socorrista com capacidade de auxiliar o uso do desfibrilador por pessoas leigas. Como a central funcionará 24 horas por dia, se vê necessário o uso de uma rotação de funcionários, levando em conta uma carga horária de 8 horas por dia para cada atendente. Por ser um serviço essencial que não pode ser interrompido, cada atendente deve possuir um substituto hábil de plantão.
+
+Tal Central de Atendimento/Base Estação, apresentará as seguintes características:
+
+\begin{itemize}
+  \item 01 - Equipe, composta por 02 pessoas capazes de operar os equipamentos e softwares da Estação Base e do VANT
+  \item 02 - Computadores DELL – InspironSmall Desktop \cite{DELL}
+  \item 01 Gerador de Energia a Gasolina Portátil \cite{Gerador}
+\end{itemize}
+
+
 \subsubsection{Controlador Pixhawk}
 O módulo Pixhawk piloto automático é um sistema muito eficiente em tempo real de operação. 
 O software pode ser atualizado com um bootloader USB (gerenciador de boot USB), que é um programa simples com a 
@@ -10,51 +26,91 @@ escrita de missões e comportamento de voo. \cite{pix}
  
 O módulo Pixhawk flagship pode ser utilizado visando as novas opções de periféricos, como sensor digital de velocidade do ar, o suporte para um indicador LED externo multicor e um magnetômetro externo. Todos os periféricos são automaticamente detectados e configurados. \cite{pix}
 
-\subsubsection{Desfibrilador}
+\subsubsection{Funcionamento do VANT}
 
-A escolha do desfibrilador, para ser carregado no VANT foi realizada visto que:
+Os VANT's por serem um tipo de veículo de pequeno porte e em conseqüência a miniaturização de seus componentes eletrônicos e seu barateamento, têm-se sua utilização gradativamente aumentada nas mais diversas áreas, como: vigilância, análise ambiental, missões militares e busca e salvamento de pessoas tanto em auto mar, como em áreas de pouco acesso. \cite{Branco}
 
-\begin{citacao}
-foi documentada uma taxa de 
-sobrevivência entre vítimas de parada cardíaca com fibrilação ventricular confirmada acima de 90\% quando a desfibrilação é atingida
-dentro do primeiro minuto de colapso. As taxas de sobrevivência declinam 7 a 10\% a cada minuto em que a desfibrilação
-é atrasada, de modo que uma vítima de parada cardíaca sem desfibrilação por 12 minutos tem apenas 2 a 5\%
-de chance de sobrevivência.\cite{1}
-\end{citacao}
+O VANT projetado,será composto por um complexo sistema integrado, apresentando cinco sub-módulos principais  que trabalham em conjunto afim de obter uma alta plataforma de observação e atuação.
 
-O objetivo em realizar a Reanimação Cárdio-Pulmonar (RCP) é prover oxigênio ao cérebro e coração até que
-o tratamento adequado restaure os batimentos cardíacos normais, ou que permita o tempo necessário para a 
-chegada de uma equipe de socorro de Suporte Avançado de Vida (SAV). Quando o início da RCP for retardado, 
-a chance de sobrevida é prejudicada e o córtex cerebral (o tecido mais susceptível à lesão por baixa de 
-oxigênio no sangue) sofre danos irreversíveis,resultando em morte ou seqüelas neurológica severa e permanente. \cite{2}
+Sendo esses módulos, baseados em \cite{pastor}
 
-O desfibrilador externo automático (DEA) por ser portátil e automático, torna a possível utilização por 
-pessoas sem formação médica, visto que ele possui um computador embutido que verifica o ritmo cardíaco da 
-pessoa e calcula se a desfibrilação se faz necessária, mostrando um comando para a pessoa acionar o botão, de 
-modo a liberar a carga no peito da vitima.\cite{3}. O diagrama de bloco mostrado na Figura \ref{fig:dea}, mostra todo o funcionamento do DEA.
+\begin{itemize}
+	\item Estrutura do VANT – Uma estrutura simples, leve, aerodinamicamente eficiente e com uma plataforma estável, capaz de oferecer uma otimizização na qualidade de voo do mesmo. 
+	\item Controlador do VANT – Para realizar todo o processo de controle, comunicação externa e autonomia de voo do VANT, será utilizado o controlador PIXHAWK, da empresa 3D Robotcs, um sistema de computador concebido para coletar informações aerodinâmicas através de um conjunto de sensores(acelerômetros, giroscópios, magnetômetros, sensores de pressão, GPS, etc.), de modo a pilotar automaticamente o VANT.
+	\item Caixa de Sensoriamento - Um conjunto de sensores compostos por câmeras de TV, sensores infravermelho, sensores térmicos, etc., para reunir informações que podem ser parcialmente processadas \textit{on-board}, pelo próprio controlador do VANT, ou transmitidas a uma base estação, para posterior análise.
+	\item Estação Base – Uma equipe de chão, situada em uma região próxima a área de atuação do VANT, destinada a monitorar o desenvolvimento do voo, acompanhar e orientar o atendimento de emergência e eventualmente operar o VANT, caso ocorra alguma falha técnica. 
+	\item Infraestrutura de Comunicação - Uma mistura de mecanismos, equipamentos e técnicas de comunicação (moldens de rádio,satcomm, links de microondas, etc.) que devem garantir um elo contínuo e estável entre o VANT e a estação de base. 
+\end{itemize}
 
-\begin{figure}[h!]
-	\centering
-	  \includegraphics[keepaspectratio=true,scale=0.3]{figuras/dea.png}
-	\caption{Diagrama de Bloco. Fonte: \cite{bloco}}
-	\label{fig:dea}
-\end{figure}
 
-O desfibrilador, como demonstrado na Figura \ref{fig:dea}, consiste de uma fonte  de alimentação que 
-fornece uma tensão regulada aos circuitos de controle e de interface do equipamento, além de fornecer uma carga.
+% figura
 
-A principal hipótese pela qual o choque elétrico desfibrilatório termina com a fibrilação ventricular (FV) se
-baseia na despolarização de uma determinada massa crítica miocárdica, tornando-a temporariamente inexcitável, e
-assim extinguindo as frentes de onda de excitação causadas pela manutenção da FV, de modo a permitir o 
-restabelecimento do padrão normal de excitação e propagação elétrica (ZIPES et al., 1975 apud \citeonline{4}).
+A arquitetura de implementação do VANT utilizará microcontroladores, assim como sensores e módulos de transmissão de dados (Figura \ref{fig:diagrama}).
+Os dados transmitidos entre o servidor na central de monitoramento, o VANT e os aplicativos (controle da missão e rastreador) seguirão um determinado padrão. Em caso de perda sinal, com a central de controle, o VANT será programado para que retorne automaticamente para a base de controle.
 
-A figura \ref{fig:circuitodea} mostra todo o circuito eletrônico do DEA.
 
-\begin{figure}[h!]
-	\centering
-		\includegraphics[keepaspectratio=true,scale=1.2,angle=-90]{figuras/circuitodea.png}
-	\caption{Circuito eletrônico DEA. Fonte: \cite{dea}}
-	\label{fig:circuitodea}
-\end{figure}
+\subsubsection{Sistema de comunicação via rádio frequência}
+
+Os sistemas de comunicação sem fio são baseados em campos eletromagnéticos, e são ondas que transportam energia de um ponto ao outro, isso possibilita que haja comunicação sem a necessidade de uma conexão física dos fios \cite{VALLE1}. 
+
+Para que haja a propagação do sinal de radiofrequência (RF) é necessário que o sinal seja conduzido por um cabeamento condutor até uma antena que posteriormente irá irradiar através do ar os pulsos eletromagnéticos do sinal \cite{VALLE1}. 
+
+A antena é um componente responsável por converter um sinal, do meio cabeado, em um sinal wireless (sem fio) e vice-versa. Os sinais irradiados no ar livre, em forma de ondas eletromagnéticas, propagam-se em linha reta e em todas as direções \cite{Rappaport2}. Com isso pode-se transmitir qualquer tipo de informação a um receptor remoto apenas utilizando a propagação dessas ondas eletromagnéticas.
+
+% imagem
+
+\subsubsection{Radiofrequências}
+
+O espectro eletromagnético da radiofrequência ocupa as frequências entre os 3 kHz e os 300 GHz. 
+
+A figura X+1 mostra as bandas de radiofrequência, o nome das respectivas e suas aplicações tradicionais.
+
+As ondas de radiofrequência de médias e baixas frequência (MB e ELF) possuem grandes comprimentos de onda, essa característica favorece a difração na atmosfera e garante que os obstáculos de grandes dimensões sejam contornados mais facilmente \cite{Rappaport2}.
+
+Quanto maior a frequência menos é a capacidade de transmitir para distâncias muito longas ao nível da superfície terrestre \cite{VALLE1}. 
+
+\begin{itemize}
+	\item As ondas MF são as ondas utilizadas nas estações nacionais, permitindo difundir o som com maior qualidade, embora com menor alcance;
+	\item As ondas LF são utilizadas nas estações de rádio que transmitem a nível mundial;
+	\item As ondas ELF, que têm frequências extra baixas, são utilizadas quando tem-se grande obstáculos e necessita enviar uma informação. 
+	\item As Ondas HF e VHF, possuem pequenos comprimentos de ondas, geralmente sofrendo múltiplas reflexões na ionosfera e na superfície terrestre, não conseguem acompanhar a curvatura da Terra. São utilizadas em comunicações que não exigem grande alcance, mas quando é exigida a alta qualidade de som e imagem.
+	\item As Ondas UHF, SHF e EHF são utilizadas para comunicação com satélites, pois o seu comprimento de onda é muito pequeno e ele não sofre quase que refração nenhuma na atmosfera. 
+\end{itemize} 
+
+\subsubsection{Agência Nacional de Telecomunicações (ANATEL)}
+
+Para que seja criado um novo link utilizando radiofrequência é necessário consultar a ANATEL, pois ela é responsável por manter o controle de todas as frequências utilizadas nas telecomunicações, para garantir que não exista interferências nas transmissões.
+
+% image
+
+Para poder ter acesso a um canal de frequência é necessário cumprir o regulamento de uso do espectro de radiofrequências. Resolução Nº 259 de 19 de abril de 2001(Em anexo ao relatório);
+
+\subsubsection{Especificação do projeto da comunicação do VANT}
+
+Para a comunicação será utilizado dois canais.
+
+\begin{itemize}
+	\item Um canal será responsável apenas pela comunicação dos dados referentes ao deslocamento, ele será para o controle do VANT, então será transmitido informações da trajetória que será seguida para o piloto automático e em caso de emergência o controle manual.
+	\item O outro canal será para transmissão dos dados de vídeo e áudio.
+\end{itemize}
+
+\subsubsection{A comunicação e transmissão de dados }
+
+O piloto automático guiará o VANT até a emergência. A central receberá a solicitação do veículo e com as orientações do local do acidente, ela irá mapear o percurso a ser seguido para chegar até o destino.  Essas informações referentes ao trajeto e coordenadas de GPS serão passadas de forma wireless serialmente para o sistema e controladores do VANT. Para que isso aconteça, eles estarão conectadas por um canal de comunicação de radiofrequência.
+
+A central necessitará passar informações ao usuário referentes ao atendimento, também precisará ver o estado do paciente e ver se os procedimentos foram realizados conforme as instruções e as informações dos sinais vitais da vítima para entender a real situação dele. Com isso a central receberá um sinal de áudio e vídeo e o VANT receberá apena o sinal de áudio da central. 
+
+\subsubsection{Projeto da comunicação do VANT}
+A comunicação da central de atendimento e o VANT será através de um link de radiofrequência, será criado um canal na faixa das VLF (Very Low Frequency).
+
+\begin{itemize}
+	\item A escolha dessa faixa de operação VLF foi devido à grande facilidade de propagação desses tipos de onda;
+	\item Grande possibilidade de contorno de obstáculos de grandes dimensões;
+	\item Baixa suscetibilidade de sofrer interferências;
+	\item Propaga-se usando a atmosfera;
+	\item Menores chances de perder o link do canal;
+	\item A faixa das ELE e VLF estão disponíveis no Brasil. De 0 a 8,5 KHz temos essas duas faixas.
+	\item O Canal de comunicação do VANT será nessa faixa de 3KHz a 8,5KHz.
+\end{itemize}
 
 \pagebreak

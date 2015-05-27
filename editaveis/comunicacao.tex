@@ -1,18 +1,6 @@
-\subsubsection{Sistema de Comunicação via Rádio Frequência}
+\subsubsection{Protocolo de Comunicação via Rádio Frequência}
 
- A comunicação da central de atendimento e o VANT será através de um link de radiofrequência, será criado um canal na faixa das VLF (Very Low Frequency).
-
-\begin{itemize}
-  \item A escolha dessa faixa de operação VLF foi devido à grande facilidade de propagação desses tipos de onda;
-  \item Grande possibilidade de contorno de obstáculos de grandes dimensões;
-  \item Baixa suscetibilidade de sofrer interferências;
-  \item Propaga-se usando a atmosfera;
-  \item Menores chances de perder o link do canal;
-  \item A faixa das ELE e VLF estão disponíveis no Brasil. De 0 a 8,5 KHz temos essas duas faixas.
-  \item O Canal de comunicação do VANT será nessa faixa de 3KHz a 8,5KHz.
-\end{itemize}
-
-O MAVLink - \textit{Micro Air Vehicle Message Marshalling Library} - é uma biblioteca de comunicação para 
+O protocolo utilizado no link de rádio frequência criado será o MAVLink - \textit{Micro Air Vehicle Message Marshalling Library} - é uma biblioteca de comunicação para 
 pequenas quantidades de dados entre aeronaves não tripuladas e estações de controle em terra. 
 Permitindo o envio de pacotes de informações através de \textit{byte-level serialization} o que torna 
 compatível com qualquer onda de radio.\cite{mavlink}
@@ -46,23 +34,23 @@ A figura \ref{fig:planovoo} mostra um exemplo de plano de voo.
 Nesse plano, o VANT decola do ponto \textit{Home}, em seguida é direcionado até ao ponto 2 e depois 
 se desloca ao ponto 3 e retorna ao ponto inicial.
 
-\begin{figure}[h!]
-    \centering
-	    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/planovoo.png}
-    \caption{Exemplo de missão da GCS. Fonte: Software \textit{Mission Planner}}
-    \label{fig:planovoo}
-\end{figure}
+% \begin{figure}[h!]
+%     \centering
+% 	    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/planovoo.png}
+%     \caption{Exemplo de missão da GCS. Fonte: Software \textit{Mission Planner}}
+%     \label{fig:planovoo}
+% \end{figure}
 
 
 Os locais onde deve-se passar, ou pousar, ou executar um comando são definidos através das coordenadas de longitude e latitude. Assim quando ocorrer uma emergência, a equipe de controle, com o auxílio da API Google Maps integrada com o GCS, apontará as coordenadas aonde o VANT deve pousar para executar o socorro. 
 A figura \ref{fig:esplanada} mostra uma missão na Esplanada dos Ministérios.
 
-\begin{figure}[h!]
-    \centering
-	    \includegraphics[keepaspectratio=true,scale=0.8]{figuras/esplanada.png}
-    \caption{Simulação feita na Esplanada. Fonte: Software \textit{Mission Planner}}
-    \label{fig:esplanada}
-\end{figure}
+% \begin{figure}[h!]
+%     \centering
+% 	    \includegraphics[keepaspectratio=true,scale=0.8]{figuras/esplanada.png}
+%     \caption{Simulação feita na Esplanada. Fonte: Software \textit{Mission Planner}}
+%     \label{fig:esplanada}
+% \end{figure}
 
 A plataforma a ser utilizado será o Microsoft Windows devido à grande utilização no Serviço Público, 
 além de oferecer maior compatibilidade com os recursos utilizados, obedecendo, por exemplo, os requisitos

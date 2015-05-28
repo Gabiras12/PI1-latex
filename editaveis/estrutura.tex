@@ -1,4 +1,4 @@
-\subsection{Escolha da aeronave}
+\subsubsection{Escolha da aeronave}
 
 Para escolha de uma aeronave que possa atender as necessidades impostas pelo projeto, deve considerar qual tipo de aplicação que a aeronave pode oferecer, escolhendo a melhor aeronavegável, que respeite todos os limites presentes no projeto. 
 
@@ -30,7 +30,7 @@ Assim como um helicóptero tradicional, um multirotor se move para frente / trá
 
 A desvantagem de utilizar os multirotors é a falta de aerodinâmica, tempo de voo reduzido e baixa eficiência dos motores. Contudo, para transporte de equipamento hospitalar, não exigirá um tamanho tão grande comparado a um aeromodelo.
 
-\subsection{Especificação do VANT escolhido}
+\subsubsection{Especificação do VANT escolhido}
 
 O multirotor escolhido para esse projeto é o de oito hélices, ou octocóptero. Embora oito rotores ofereçam mais estabilidade, também diminuem o tempo de voo, porque aumenta a pressão sobre baterias. De fato, o número de rotores em relação ao tempo de voo é exponencial e não linear. Mas como o projeto exige um peso maior, para melhor controle do VANT, o ideal seria o octocóptero. 
 
@@ -55,13 +55,13 @@ A hélice é um conjunto de pás com o mesmo centro, que ao ser girado causa uma
 \begin{figure}[h!]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/diagramaEstru.eps}
-    \caption{Esquemático de conexão e funcionamento do ESC. \cite{CASSEMIRO}}
+    \caption{Esquemático de conexão e funcionamento do ESC. \cite{pinto}}
     \label{fig:diagramaEstru}
 \end{figure}
 
 Os ESC (Eletronic speed control) é quem torna possível o voo. O ESC crava a tensão para ligar o motor e aliviá-lo de volta para mantê-los girando a uma velocidade baixa em um acelerador baixo. Além disso, como se aplica mais entrada do acelerador, o ESC acelera o motor de maneira uniforme.  Eles devem ser cuidadosamente equilibrados com o motor para dar energia suficiente para o motor e não queimar. No caso, deve ter um ESC individual para cada motor. 
 
-\subsection{Escolha dos materiais}
+\subsubsection{Escolha dos materiais}
 
 A escolha de determinados materiais em projetos de engenharia depende de como os mesmos irão se comportar diante de um determinado esforço nas várias situações de aplicação.
 
@@ -81,12 +81,16 @@ Para que seja possível a visualização da comparação feita, as característi
 \end{figure}
 
 O módulo de elasticidade é a inclinação da região de comportamento elástico inicial da curva, ou seja, o coeficiente linear da reta antes de atingir a região de deslizamento de discordâncias.
-
-% formula
-
+\begin{equation}
+E =\frac{\Delta y}{\Delta x}
+\end{equation}
 A ductilidade é a medida do grau de deformação plástico que foi suportada até a fratura(F). Pode ser expressa quantitativamente como a porcentagem do alongamento percentual.
-
-% formula
+\begin{equation}
+AL\% =\frac{lf - lo}{lo} * 100
+\end{equation}
+\begin{center}
+lf = comprimento final e lo = comprimento inicial
+\end{center}
 
 O limite de resistência à tração está caracterizado no gráfico como início da ruptura e indica o valor máximo de tensão que pode ser suportado por uma estrutura sob tração.
 A tenacidade é definida como sendo a habilidade de um material absorver energia e se deformar plasticamente antes de fraturar.
@@ -106,7 +110,7 @@ Embora o alongamento percentual dos materiais poliméricos em geral seja muito m
 
 Como conclusão do material a ser utilizado, é interessante partes da estrutura, como os braços, frame central, helices e trem de pouso, utilizando fibra de carbono. Partes como a carcaça e componentes eletrônicos, poderão ser utilizados polímeros em geral. 
 
-\subsection{Construção do VANT}
+\subsubsection{Construção do VANT}
 
 Considerando a parte mais importante do projeto, o desfibrilador será acoplado no VANT, na qual suas medidas são utilizadas como referencia para modelagem do frame central. a modelagem dos  braços e hélices do drone, não serão necessários, devido eles serão utilizados do modelo de um VANT S1000.
 

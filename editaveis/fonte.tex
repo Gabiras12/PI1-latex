@@ -7,9 +7,24 @@ Uma bateria é um dispositivo capaz de armazenar energia química e transformá-
 
 Para determinar a escolha da bateria utilizada em qualquer projeto, é importante fazer a análise  da energia armazenada na bateria e a variação de descarga ao ser utilizada, e para calcular a energia armazenada, deve-se conhecer a tensão (V) e sua capacidade de descarga de corrente no tempo (Ah), utilizando a equação a seguir: \cite{peixoto}
 
+$Energia(Wh)= Tensão(V)*Capacidade(Ah)$
+
+Onde tensão ou diferença de potencial (DDP), é a diferença de potencial elétrico entre dois pontos ou a diferença em energia elétrica potencial por unidade de carga elétrica entre dois pontos, e sua unidade de medida é o Volt. E Capacidade (amp-hora ou mA-h) é a transferência de carga elétrica através de uma corrente estável de um ampere no período de uma hora \cite{gibbs}.
+
 Além disso, deve-se também conhecer a densidade de energia (relação entre quantidade de energia por unidade de massa ou Volume), Resistência interna, voltagem, peso, viabilidade econômica e disponibilidade no mercado.
 
-$Energia(Wh)= Tensão(V)*Capacidade(Ah)$
+
+\subsubsection{Atuação do circuito na bateria}
+
+O diagrama da figura \ref{fing:esquemabateria}, demonstra funciona o sistema de alimentação do circuito elétrico do VANT. É possível identificar a bateria principal (batt), ela é ligada a porta de alimentação do modulo de potência 3DR Pixhawk, que foi usado pois a bateria que está sendo usada necessita devido suas especificações. Posteriormente tudo é ligado a uma placa de distribuição de potência (PDB), onde ela é a responsável para suprir a necessidade do sistema, ela que alimentará a controladora Pixhawk com seus periféricos e mandará energia suficiente para suprir a corrente exigida dos escs para o funcionamento dos motores. Por segurança, há uma segunda fonte de alimentação, uma fonte de 5V (BEC), ela é para casos onde houver uma falha na fonte primária, dessa forma ela será automaticamente ativada para evitar possíveis falhas (PixHawk, 2014).
+
+\begin{figure}[h!]
+    \centering
+	\includegraphics[keepaspectratio=true,scale=0.4]{figuras/esquemabateria.eps}
+    \caption{Diagrama de blocos da bateria ligada ao controlador}
+    \label{fig:esquemabateria}
+\end{figure}
+
 
 \subsubsection{Bateria de polímeros de Lítio (Li-Polymer)}
 

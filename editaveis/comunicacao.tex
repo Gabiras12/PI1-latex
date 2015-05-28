@@ -10,6 +10,26 @@ definido na seção \ref{escopo} - Escopo, a viabilidade e eficiência na implan
 extremamente alta. Aonde o sinal emissor será posicionado na torre de TV cobrindo toda a 
 área de atuação com um boa qualidade de sinal. 
 
+\subsubsection{Protocolo de perda de sinal}
+
+\begin{itemize}
+  \item Protocolo de erros
+
+  Para um funcionamento seguro é necessário ter em mente que podem vir a existir condições adversas as planejadas. Tendo isso em vista foi estabelecido um protocolo de erros para situações que podem vir a ocorrer durante um voo do VANT.
+
+  \item Perda de sinal
+  
+  Em caso de perda de sinal o VANT deverá retornar a seu ponto de origem imediatamente.
+
+  \item Bateria fraca
+
+  Ao chegar em 25\% restante de bateria o VANT irá retornar para a central imediatamente.
+
+  \item Perda de potência
+
+  Em caso de perda de potência por parte do motor, o VANT procurará um local para pousar imediatamente.
+\end{itemize}
+
 \subsubsection{Especificação do Projeto da Comunicação do Vant}
 
 \begin{itemize}
@@ -25,8 +45,28 @@ extremamente alta. Aonde o sinal emissor será posicionado na torre de TV cobrin
 
 \subsubsubsection{Comunicação com o Pixhawk}
 O controle e configura\c{c}\~ao do voo do VANT \'e gerenciado pelo \textit{Ground Control Station}, em português, 
-esta\c{c}\~ao de controle em solo. Devido à facilidade na customização e a compatibilidade com a placa controladora adotada pelo projeto, Pixhawk, foi escolhido o GCS Mission Planner mantido pelo projeto \textit{open-source  APM autopilot}. 
-\cite{gcs}
+esta\c{c}\~ao de controle em solo. Devido à facilidade na customização e a compatibilidade com a placa controladora adotada pelo projeto, Pixhawk, foi escolhido o GCS Mission Planner mantido pelo projeto \textit{open-source  APM autopilot}.\cite{gcs}
+
+A escolha foi feita com base na comparação entre os requisitos da aplicação descritos no documento de visão e as características dos softwares de mercado pesquisados.
+
+Foram analisados os seguintes softwares: 
+
+\begin{itemize}
+  \item QGroundControl
+  \item Mission Planner
+  \item APMPlanner
+\end{itemize}
+
+Após a analise foram observados os itens da Figura \ref{fig:gcstable}
+
+\begin{figure}[h!]
+    \centering
+      \includegraphics[keepaspectratio=true,scale=0.5]{figuras/gcstable.eps}
+    \caption{Resultado da análise dos softwares de GCS.}
+    \label{fig:gcstable}
+\end{figure}
+
+Pela Figura \ref{fig:gcstable}, pode-se perceber que o software Mission Planner é a melhor solução para o gerênciamento do VANT. Uma vez que o projeto está sob uma licença aonde é permitido o uso para comercialização, este será utilizado com GCS do VANT.
 
 Com a utilização do \textit{GCS Mission Planner}, o processo da operação de socorro é automatizado. 
 Uma vez que, com a aplicação é possível a criação de planos de voos. 
@@ -34,23 +74,23 @@ A figura \ref{fig:planovoo} mostra um exemplo de plano de voo.
 Nesse plano, o VANT decola do ponto \textit{Home}, em seguida é direcionado até ao ponto 2 e depois 
 se desloca ao ponto 3 e retorna ao ponto inicial.
 
-% \begin{figure}[h!]
-%     \centering
-% 	    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/planovoo.png}
-%     \caption{Exemplo de missão da GCS. Fonte: Software \textit{Mission Planner}}
-%     \label{fig:planovoo}
-% \end{figure}
+\begin{figure}[h!]
+    \centering
+	    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/planovoo.eps}
+    \caption{Exemplo de missão da GCS. Fonte: Software \textit{Mission Planner}}
+    \label{fig:planovoo}
+\end{figure}
 
 
 Os locais onde deve-se passar, ou pousar, ou executar um comando são definidos através das coordenadas de longitude e latitude. Assim quando ocorrer uma emergência, a equipe de controle, com o auxílio da API Google Maps integrada com o GCS, apontará as coordenadas aonde o VANT deve pousar para executar o socorro. 
 A figura \ref{fig:esplanada} mostra uma missão na Esplanada dos Ministérios.
 
-% \begin{figure}[h!]
-%     \centering
-% 	    \includegraphics[keepaspectratio=true,scale=0.8]{figuras/esplanada.png}
-%     \caption{Simulação feita na Esplanada. Fonte: Software \textit{Mission Planner}}
-%     \label{fig:esplanada}
-% \end{figure}
+\begin{figure}[h!]
+    \centering
+	    \includegraphics[keepaspectratio=true,scale=0.8]{figuras/esplanada.eps}
+    \caption{Simulação feita na Esplanada. Fonte: Software \textit{Mission Planner}}
+    \label{fig:esplanada}
+\end{figure}
 
 A plataforma a ser utilizado será o Microsoft Windows devido à grande utilização no Serviço Público, 
 além de oferecer maior compatibilidade com os recursos utilizados, obedecendo, por exemplo, os requisitos

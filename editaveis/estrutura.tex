@@ -11,7 +11,7 @@ Os multirotors vêm aumentando no mercado nos últimos anos. Em termos mais simp
 Os multirotors voam através da utilização de dois princípios básicos: elevação (lift) e torque.  Multirotors são verdadeiramente um grande exercício de física newtoniana: toda ação tem uma reação igual e oposta. Em um helicóptero tradicional, o rotor principal gira na mesma direção. Para manter o corpo de girar para o outro lado, um rotor de cauda é implementado de forma a colocar uma pressão constante sobre a cauda para manter o corpo estável. O multirotor usa hélices contra-rotação para manter o corpo estável, enquanto as hélices girarem \cite{audronis}.
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/gira.eps}
     \caption{Diagrama de gira para esquerda e para direita. Fonte \cite{audronis}}
@@ -21,7 +21,7 @@ Os multirotors voam através da utilização de dois princípios básicos: eleva
 Assim como um helicóptero tradicional, um multirotor se move para frente / trás e de lado para o outro pela inclinação. Inclinar o multirotor altera a direção do empuxo fornecido pelos rotores. Por exemplo, mergulhando o nariz e levantando a cauda, a direção na qual o fluxo de ar é empurrado é não só para baixo, mas também para a parte traseira do multirotor. Se toda a ação tem uma reação igual e opsta, empurrando o ar para a parte traseira do multirotor empurra para a frente o mesmo. Para fazer um mergulho de lado, a velocidade da hélice é reduzida, e para elevar um outro lado, a velocidade dos motores sobre que lado está aumentada.
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/guinada.eps}
     \caption{Diagrama de guinada e rolagem de um quadricóptero. Fonte \cite{audronis}}
@@ -36,7 +36,7 @@ O multirotor escolhido para esse projeto é o de oito hélices, ou octocóptero.
 
 O motor escolhido é o motor Tarot 4114 High Power Brushless (sem escova) Motor, de alta rotação. Ele é usado pelo modelo US 1000 também octocóptero que é utilizado para filmagens. Ele possui capacidade de empuxo de até 2.5 kg. Este motor possui um rotor que é magnetizado por imãs permanentes. Motores de corrente contínua possuem vários benefícios em relação aos motores com escova, dentre algumas estão: melhor característica velocidade x torque, maiores eficiência, vida útil, taxa de velocidade e é mais silencioso \cite{nascimento}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/tarot.eps}
     \caption{Quadro de relação de um motor 4114.}
@@ -45,14 +45,14 @@ O motor escolhido é o motor Tarot 4114 High Power Brushless (sem escova) Motor,
 
 A hélice é um conjunto de pás com o mesmo centro, que ao ser girado causa uma propulsão na mesma direção. Utiliza-se duas pás por hélice. Quanto maior o passo da hélice, maior a velocidade alcançada pela aeronave e mais lenta é a resposta à manobras. Logo, o ideal é que o passo da hélice seja pequeno, pois é preferível uma melhor resposta à manobras, mesmo que seja preciso abrir mão de velocidade para tal \cite{VIOLATO}. A hélice escolhida é a 15x5 5.E Carbon Fiber Propellers L/H and R/H Rotation Suits DJI.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/elice.eps}
     \caption{Carbon Fiber Propellers L/H and R/H Rotation Suits DJI. Fonte: \cite{dji}}
     \label{fig:elice}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/diagramaEstru.eps}
     \caption{Esquemático de conexão e funcionamento do ESC. \cite{pinto}}
@@ -73,7 +73,7 @@ A justificativa para a escolha destes materiais foi baseada de acordo com o mód
 Para que seja possível a visualização da comparação feita, as características citadas acima serão brevemente explicadas.
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/grafico-tensao.eps}
     \caption{Gráfico Tensão-Deformação.}
@@ -95,7 +95,7 @@ lf = comprimento final e lo = comprimento inicial
 O limite de resistência à tração está caracterizado no gráfico como início da ruptura e indica o valor máximo de tensão que pode ser suportado por uma estrutura sob tração.
 A tenacidade é definida como sendo a habilidade de um material absorver energia e se deformar plasticamente antes de fraturar.
 
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/graficoRelacao.eps}
     \caption{ Relação de materiais}
@@ -116,7 +116,7 @@ Considerando a parte mais importante do projeto, o desfibrilador será acoplado 
 
 Para inicio da construção do VANT, consideramos as medidas de um DEA (Desfibrilador externo automático) vendido no mercado, chamado HeartSine samaritan PAD SAM 300P. Com as seguintes  medidas:
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/heart.eps}
     \caption{ HeartSine samaritan PAD SAM 300P}
@@ -125,7 +125,7 @@ Para inicio da construção do VANT, consideramos as medidas de um DEA (Desfibri
 
 O frame central projetado será baseado no frame central do S1000, porém adaptado ao desfibrilador e o reanimador. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/framecentral.eps}
     \caption{ Frame central S1000}
@@ -135,7 +135,7 @@ O frame central projetado será baseado no frame central do S1000, porém adapta
 
 Como as medidas, seguindo o manual, do frame central do S1000 é 337.5mm da ponta de um braço até outra, para o nosso projeto, será aumentado  200mm em relação ao centro, 100mm para um lado e 100mm par outro. Como mostra a figura a seguir:
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/drawing.eps}
     \caption{ Drawing Frame Central Superior}
@@ -144,7 +144,7 @@ Como as medidas, seguindo o manual, do frame central do S1000 é 337.5mm da pont
 
 Como a figura acima mostra, as formas triangulares do lado esquerdo são “buracos” na qual tem como função deixar o frame mais leve, contudo, não perder sua utilidade em ser a base do VANT. O lado direito não possui esses espaços devido ser o local para alocar o desfibrilador. O lado esquerdo alocará a antena e até duas baterias , na qual serão presas por velcros, amarrados entre os “buracos” do frame. Também serão parafusadas os braços e a carcaça do VANT no mesmo.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/drawinfinfo.eps}
     \caption{ Frame Central inferior}
@@ -153,7 +153,7 @@ Como a figura acima mostra, as formas triangulares do lado esquerdo são “bura
 
 Já o frame inferior será parafusado o trem de pouso e o frame superior. Ambos os frames serão unidos como mostra a imagem 5, tendo um espaço de 42mm. O espaço entre os dois frames é destinado para alocar a parte dos controladores de voo , ESC e o conjunto dos fios.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/catia1.eps}
     \caption{Desenvolvimento do VANT no CATIA}
@@ -162,7 +162,7 @@ Já o frame inferior será parafusado o trem de pouso e o frame superior. Ambos 
 
 Por meio da plataforma CATIA, foi possível idealizar o projeto EmerVANT, em escala real. Para visualizar de melhor forma, utilizou-se o KeyShot, na qual ele renderiza VANT.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/keyshot1.eps}
     \caption{ Renderização do Projeto EmerVANT}
@@ -171,7 +171,7 @@ Por meio da plataforma CATIA, foi possível idealizar o projeto EmerVANT, em esc
 
 O retângulo vermelho, na carcaça do EmerVANT, é a gaveta para retirada dos eletrodos do Desfibrilador Externo Automático, na qual o será orientado para o leigo, pela central, onde se encontra o eletrodos, juntamente todos os procedimentos de atendimento.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/keyshot2.eps}
     \caption{ Gaveta para eletrodos}

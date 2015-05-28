@@ -16,11 +16,11 @@ Além disso, deve-se também conhecer a densidade de energia (relação entre qu
 
 \subsubsection{Atuação do circuito na bateria}
 
-O diagrama da figura \ref{fing:esquemabateria}, demonstra funciona o sistema de alimentação do circuito elétrico do VANT. É possível identificar a bateria principal (batt), ela é ligada a porta de alimentação do modulo de potência 3DR Pixhawk, que foi usado pois a bateria que está sendo usada necessita devido suas especificações. Posteriormente tudo é ligado a uma placa de distribuição de potência (PDB), onde ela é a responsável para suprir a necessidade do sistema, ela que alimentará a controladora Pixhawk com seus periféricos e mandará energia suficiente para suprir a corrente exigida dos escs para o funcionamento dos motores. Por segurança, há uma segunda fonte de alimentação, uma fonte de 5V (BEC), ela é para casos onde houver uma falha na fonte primária, dessa forma ela será automaticamente ativada para evitar possíveis falhas (PixHawk, 2014).
+O diagrama da figura \ref{fig:esquemabateria}, demonstra funciona o sistema de alimentação do circuito elétrico do VANT. É possível identificar a bateria principal (batt), ela é ligada a porta de alimentação do modulo de potência 3DR Pixhawk, que foi usado pois a bateria que está sendo usada necessita devido suas especificações. Posteriormente tudo é ligado a uma placa de distribuição de potência (PDB), onde ela é a responsável para suprir a necessidade do sistema, ela que alimentará a controladora Pixhawk com seus periféricos e mandará energia suficiente para suprir a corrente exigida dos escs para o funcionamento dos motores. Por segurança, há uma segunda fonte de alimentação, uma fonte de 5V (BEC), ela é para casos onde houver uma falha na fonte primária, dessa forma ela será automaticamente ativada para evitar possíveis falhas \cite{pix}.
 
 \begin{figure}[h!]
     \centering
-	\includegraphics[keepaspectratio=true,scale=0.4]{figuras/esquemabateria.eps}
+	\includegraphics[keepaspectratio=true,scale=0.6]{figuras/esquemabateria.eps}
     \caption{Diagrama de blocos da bateria ligada ao controlador}
     \label{fig:esquemabateria}
 \end{figure}
@@ -53,6 +53,12 @@ adaptáveis a diferentes formatos e permitindo altas taxas de descarga. A carga 
 corresponde a quantidade de carga, corrente, que pode ser fornecida por uma hora. 
 A taxa de descarga corresponde ao quanto essa carga pode ser dissipada no mesmo intervalo de tempo. \cite{gibbs}
 
+A escolha da bateria depende essencialmente dos motores aos quais a mesma irá alimentar, para que seja feita uma boa distribuição dessa tensão é necessário que seja utilizado um circuito eletrônico responsável para isso e pelo controle de velocidade do motor e demais funções (Zaccarelli,2012). Após diversas comparações com trabalhos de cunho técnico-científico, optou-se pela  LiPo 22.2 V, 22000mAh, pois a mesma oferecia maior tensão, capaz de alimentar a necessidade do sistema do drone como um todo, melhor relação peso quantidade de carga armazenada, possuir taxa de descarga adequada exigida pelo motor, além de aumentar a autonomia do sistema.
+
+As baterias LiPo são classificadas em “S”, tal fator significa quantas baterias em série possui o conjunto. Cada célula Li-Po tem uma voltagem nominal de 3,7V, portanto multiplicamos o numero de “S” por 3,7V para saber a voltagem do pack.  A voltagem mínima das Li-Po é de 3,0V por célula, carregadas possuem 4,2V e podem ser armazenadas por longos períodos com 3,8V, na presente escolha, a bateria será composta por 6 células, totalizando os 22,2V de tensão nominal \cite{gibbs}.
+
+Apesar de suas vantagens e de ser utilizada como um combustível e não como bateria, as baterias de LiPo estão propensas a sobrecarga durante o processo de carga devido a diversos fatores, o que pode ocasionar combustão Com isso, é necessária a utilização de carregadores adequados, ajuste correto de taxa de carga, utilização de balanceador de células evitando que a carga seja aplicada diretamente aos terminais principais do pack sem controle de voltagem, além de evitar o procedimento de carga ao identificar que as células do pack estão danificadas \cite{gibbs}.
+
 Suas principais vantagens são: peso reduzido em comparação com as demais e fornecimento de altas correntes 
 \cite{pinto}. Apesar de suas vantagens e de ser utilizada como um combustível e não como bateria,
 as baterias de LiPo estão propensas a sobrecarga durante o processo de carga devido a diversos fatores, 
@@ -61,7 +67,112 @@ de taxa de carga, utilização de balanceador de células evitando que a carga s
 terminais principais do pack sem controle de voltagem, além de evitar o procedimento de carga ao identificar 
 que as células do pack estão danificadas. \cite{gibbs}
 
-\subsubsubsection{Recarga}
+\subsubsection{Análise de custo}
+Considerando os requisitos estipulados no escopo do projeto, foram levantadas discussões e pesquisas que culminaram na escolha da tecnologia lítio polímero (LiPO) para utilização na parte da alimentação energética do Vant. Essa tecnologia se sobressaiu em relação a todas outras estudadas por ser baterias que apresentam baixo peso, alta tensão, além de sua capacidade de fornecer elevadas correntes ao circuito e já ser uma tecnologia amplamente utilizada no meio aeroespacial.
+
+Durante a escolha da bateria foram analisadas várias empresas ao redor de todo o mundo, sendo elas:
+
+\begin{itemize}
+ 
+\item Gens Tattu (Americana)
+
+\item Foxtech (Chinesa)
+
+\item Max Amps (Americana)
+
+\item Robokits (Indiana)
+
+\item Dronera (Norueguesa)
+
+\item Honcell (Chinesa)
+
+\end{itemize}
+
+A empresa fornecedora foi escolhida com base em diversos aspectos, os quais foram: impostos relativos a importação, facilidade de contato com os fabricantes, renome internacional da empresa, densidade energética da bateria além do custo da bateria.
+
+A  Tattu foi a empresa escolhida como fornecedora da bateria.  Dentre os fatores que mais pesaram na escolha foram a proximidade em relação ao Brasil, a facilidade de comunicação com o fabricante e também a qualidade da bateria. Foi observado que mesmo nas diferentes áreas ao redor do mundo as baterias não apresentam uma grande variação em relação ao custo, o que também favoreceu a empresa americana visto que as taxas de importação são relativamente inferiores, sendo que as únicas baterias relativamente mais baratas eram aquelas com um peso bastante superior às outras.
+
+As especificações da bateria escolhida levam como base a potência necessária de vôo do VANT, que, por sua vez, está relacionada ao tempo de vôo e também ao seu peso.  Serão necessárias apenas uma bateria com capacidade de 22000 mAh, o que somaria aproximadamente 500 dólares ao custo do projeto, cerca de 1574 reais de acordo com as cotações atuais. Abaixo segue todas as especificações da bateria escolhida, assim como uma tabela de comparação entre as outras baterias encontradas no mercado.
+
+\begin{figure}[h!]
+    \centering
+	\includegraphics[keepaspectratio=true,scale=0.6]{figuras/baterialipo.eps}
+    \caption{Bateria LiPO escolhida}
+    \label{fig:baterialipo}
+\end{figure}
+
+\textbf{Tabela comparativa entre baterias}
+
+\begin{figure}[h!]
+    \centering
+	\includegraphics[keepaspectratio=true,scale=0.6]{figuras/tabelabateria.eps}
+    \caption{Tabela comparativa de baterias.}
+    \label{fig:tabelabateria}
+\end{figure}
+
+
+\subsubsection{Cálculo da autonomia e taxa de descarga do EmerVant}
+
+Para o cálculo da autonomia de voo do EmerVant, baseamos em fórmulas sobre física e eletricidade, onde pudemos calcular a densidade da energia (wh/kg) através da tensão (V), capacidade (mA-h) e o peso da bateria(kg). 
+
+Por seguinte, para o cálculo da autonomia, que é a duração em horas que funcionará a bateria sem recarga, considera-se que a densidade de energia da bateria que escolhemos para alimentar os motores do Drone é o que vai definir a autonomia de voo calculando a energia total armazenada na bateria,a potencia de saída, o tempo de uma hora, o empuxo especifico, empuxo total e energia total, necessária para manter o Drone voando por uma hora. 
+
+Também calculamos a taxa de descarga (mA) que encontra-se por regra, estandardizada relativamente à capacidade total de armazenamento da bateria e a um dado período de tempo.
+
+Sua vida útil, que é o período em que a bateria funciona em modo eficiente, será em média de 500-1000 vezes.
+
+Considerando a tensão elétrica (V) de  22.2 V e a capacidade (amp-hora ou mA-h) de 22.000mA-h, temos que: 
+
+\begin{equation}
+Quantidade de energia = V*C => 22.2V * 22Ah = 488.4Wh
+\end{equation}
+
+Após isso, substitui na fórmula da densidade de energia: 
+
+\begin{equation}
+Densidade de energia = \frac{quantidade de energia}{P(bateria)} => \frac{488,4wh}{2,509kg} = 194,65 Wh/g.
+\end{equation}
+
+Para o cálculo da autonomia, nos baseamos na fórmula $ET=\frac{TT}{TEt}$, onde é composta por:
+
+\begin{itemize}
+\item E (Energia total armazenada na bateria) - É a corrente que a bateria pode oferecer durante T = 1h.
+\item P (Potência de saída) - É a corrente (Amperes) multiplicada pela tensão (Volts). Em fórmula P=I*V.
+\item T (Tempo) - Para definição de parâmetros, é considerado 1 hora.
+\item TE (Empuxo Específico) - Este parâmetro indica quantos gramas de empuxo são obtidos para cada Watt de potência entregue ao motor. Seleciona-se a pior condição para o motor do tipo(dada por tabela) que será de 7.69 g/W.
+\item TT (Empuxo total) - Usa-se a média entre a potência para subida e descida, ou seja, considera-se o valor médio de potência para o Drone parado no ar. Sendo assim seu TT seria igual ao valor do Peso(8419N).  
+\item ET (Energia total) - Energia necessária para manter o Drone voando por uma hora. 
+\end{itemize}
+
+Aplicando na fórmula, tem-se:
+
+\begin{equation}
+ET=\frac{TT}{TE*1h} => \frac{8419}{7.69*1h} = 1094,8 Wh.
+\end{equation}
+
+Portanto, a autonomia do Vant será determinada pela quantidade de energia contida na bateria dividida pela ET:
+
+\begin{equation}
+Autonomia = \frac{488,4Wh}{1094,8Wh *(minutos)} = 44 MINUTOS.
+\end{equation}
+
+Visto que o Vant terá consumo no motor, Esc, Sensores e controladores, a autonomia cairá, e por motivo de segurança, foi trocada a bateria de 16000 mAh para uma de com maior  tensão (Lipo 6s 22000 mAh), tentando manter a autonomia necessária para o trabalho do EmerVant (20 minutos). 
+
+No caso da taxa de descarga (mA), onde usamos a fórmula C= I*T, onde:
+
+\begin{itemize}
+	\item C= taxa de descarga
+	\item I= corrente
+	\item T= período analizado
+\end{itemize}
+
+Aplicando na fórmula, obtém-se: 
+
+\begin{equation}
+C= 5,2A* 60 minutos = 312mA.
+\end{equation}
+
+\subsubsubsection{Recarga da bateria}
 
 A carga de uma bateria é explicada de forma simples por um fenômeno químico-físico que está envolvido com a eletrólise. \cite{gibbs}
 
@@ -97,105 +208,3 @@ A figura a seguir mostra o menu do B6, que possui uma interface fácil de se int
 	\includegraphics[keepaspectratio=true,scale=0.5]{figuras/manual.eps}
     \caption{Menu do iMax B6. Fonte: \cite{ibmax}}
 \end{figure}
-
-
-\subsubsubsection{Análise de Custos}
-
-Considerando os requisitos estipulados  no escopo do projeto foram levantadas discussões e pesquisas que culminaram na escolha da tecnologia lítio polímero (LiPO) para utilização na parte da alimentação energética do VANT. Essa tecnologia se sobressaiu em relação a todas outras estudadas por baterias que apresentam baixo peso, alta tensão, além de sua capacidade de fornecer elevadas correntes ao circuito e já ser uma tecnologia amplamente utilizada no meio aeroespacial.
-
-Durante a escolha da bateria foram analisadas várias empresas ao redor de todo o mundo, sendo elas:
-
-\begin{itemize}
- 
-\item Gens Tattu (Americana)
-
-\item Foxtech (Chinesa)
-
-\item Max Amps (Americana)
-
-\item Robokits (Indiana)
-
-\item Dronera (Norueguesa)
-
-\item Honcell (Chinesa)
-
-\end{itemize}
-
-
-A empresa fornecedora foi escolhida com base em diversos aspectos, os quais foram: impostos relativos a importação, facilidade de contato com os fabricantes, renome internacional da empresa, densidade energética da bateria além do custo da bateria.
-
-A  Tattu foi a empresa escolhida como fornecedora da bateria.  Dentre os fatores que mais pesaram na escolha foram a proximidade em relação ao Brasil, a facilidade de comunicação com o fabricante e também a qualidade da bateria. Foi observado que mesmo nas diferentes áreas ao redor do mundo as baterias não apresentam uma grande variação em relação ao custo, o que também favoreceu a empresa americana visto que as taxas de importação são relativamente inferiores, sendo que as únicas baterias relativamente mais baratas eram aquelas com um peso bastante superior às outras.
-
-As especificações da bateria escolhida levam como base a potência necessária de vôo do VANT, que por sua vez está relacionada ao tempo de vôo e também ao seu peso.  Serão necessárias apenas uma bateria com capacidade de 16000 mAh, o que somaria 400 dólares ao custo do projeto, cerca de 1200 reais de acordo com as cotações atuais. Abaixo segue todas as especificações da bateria escolhida, assim como uma tabela de comparação entre as outras baterias encontradas no mercado. 
-As informações contidas na tabela foram retiradas dos sites de vendas dos fabricantes.
- \begin{figure}[h!]
-    \centering
-	\includegraphics[keepaspectratio=true,scale=0.7]{figuras/comparacaobaterias.eps}
-    \caption{Tabela comparativa entre baterias}
-\end{figure}
-
-\nocite{bateria1}
-\nocite{bateria2}
-\nocite{bateria3}
-\nocite{bateria4}
-\nocite{bateria5}
-\nocite{bateria6}
-\nocite{bateria7}
-\nocite{bateria8}
-\nocite{bateria9}
-\nocite{bateria10}
-
-
-\subsubsection{Conceitos e características para obter a autonomia do EmerVant}
-
-Os conceitos foram baseados em \cite{charlesa}, \cite{charlesb} e \cite{gibbs}.
-
-\textbf{-Densidade de energia} (wh/kg) - é a relação entre a quantidade de energia contida em um dado sistema ou região do espaço e o volume ou massa, dependendo do contexto, deste sistema/região.
-
-	Densidade de energia EmerVant: $\frac{355wh}{1932kg} =  183,85 wh/kg$
-
-\textbf{-Capacidade} (amp-hora ou mA-h) -  O mA-h é a abreviação usada como padrão para o \textit{miliampere}-hora, uma subunidade de medida (advinda do \textit{ampere}-hora, ou apenas Ah) utilizada para reconhecer a transferência de carga elétrica através de uma corrente estável de um \textit{ampere} no período de uma hora.
-
-	Capacidade EmerVant: $16.000mA-h$
-
-\textbf{-Tensão elétrica} (V) ou diferença de potencial (DDP) - é a diferença de potencial elétrico entre dois pontos ou a diferença em energia elétrica potencial por unidade de carga elétrica entre dois pontos. Sua unidade de medida é o \textit{volt}.
-	
-	Tensão do EmerVant: $22.2 V$
-
-\textbf{-Resistência interna} (W) - é a capacidade de um corpo qualquer se opor à passagem de corrente elétrica mesmo quando existe uma diferença de potencial aplicada. A presença da resistência interna da bateria limita a sua voltagem de acordo com a corrente que passa pelo circuito.
-
-	Resistência interna do EmerVant: $1\Omega$
-
-\textbf{-Taxa de descarga} (mA) - é a corrente eléctrica aplicada a uma bateria com o objectivo de restaurar a sua capacidade energética. Esta taxa encontra-se por regra estandardizada relativamente à capacidade total de armazenamento da bateria e a um dado período de tempo.
-
-\textbf{-Vida útil} - é o período em que a bateria funciona em modo eficiente. O tempo que a bateria dura entre cargas, assim como a vida útil da bateria, irá variar dependendo de vários fatores. São resumidos geralmente em seus ciclos de recarga.
-	
-	Vida útil do EmerVant: $500-1000 vezes$
-
-\textbf{-Autonomia} - é a duração em horas que funcionará a bateria sem recarga. \cite{esteban}. Onde:
-
-E - Energia total armazenada na bateria
-
-P - Potência de saída
-
-T - Tempo
-
-TT - Empuxo total
-
-Logo,
-
-$ET= 22.2 V * 16MAh= 355Wh$
-
-$Densidade = \frac{ET}{P}$
-
-$Densidade = 183.85$
-
-$ET= \frac{TT}{TE*1H}$
-
-$ET = \frac{7810}{7.69*1H} = 1015.60 Wh$
-
-Portanto, a autonomia do VANT será determinada por:
-
-$Autonomia = \frac{355WH}{1015.60Wh}$
-
-$Autonomia = 0.3495 horas$, $aproximadamente$ $20$ $minutos$

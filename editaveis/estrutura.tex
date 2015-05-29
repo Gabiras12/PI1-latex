@@ -1,15 +1,25 @@
 \subsubsection{Escolha da aeronave}
 
-Para escolha de uma aeronave que possa atender as necessidades impostas pelo projeto, deve considerar qual tipo de aplicação que a aeronave pode oferecer, escolhendo a melhor aeronavegável, que respeite todos os limites presentes no projeto. 
+Para escolha da aeronave, que atende à todas as necessidades impostas pelo projeto, deve-se considerar quais características a aeronave possui. A escolha levou em consideração a melhor aeronavegável e que pudesse suportar a maior carga possível.
 
-Considerando o fato de que o VANT (Veículo Aéreo Não-Tripulado) será utilizado para transporte de equipamento hospitalar, os aparelhos disponíveis para tal função são: VANT asa fixa e VANT asa rotativa (multirotors).
+O VANT precisa atender o transporte de equipamento hospitalar, as possíveis aeronaves para essa função são: VANT asa fixa e VANT asa rotativa (multirotores).
 
-Os VANT’s de asa fixa, no caso, os aviões não tripulados, apesar de serem rápidos e possuírem um longo alcance de voo, para transporte de carga, exige tamanho da asa um pouco maior, pois a carga tem muito peso e para isso é preciso aumentar tanto o tamanho da asa, como o próprio avião. A aterrizagem é outro fator que dificulta pelo fato de que o aeromodelo exige um espaço aberto, com uma pista de pouso pelo menos do tamanho do aeromodelo. O que pode ser perigoso, pois o pouso será próximo de pessoas e um curto espaço para aterrissagem.
+Os VANT’s de asa fixa, no caso, os aviões não tripulados, apesar de serem rápidos e possuírem um longo alcance de voo, para transporte de carga, exige um tamanho grande de asa, A envergadura do VANT muda com relação ao peso, e como a carga de transporte é considerada elevada, o comprimento da asa teria que ser muito grande, como o próprio avião. A aterrisagem é outro fator que dificulta, pois os aeromodelos exige um espaço aberto com uma pista de pouso para conseguirem descer. As dimensões da pista é uma grande dificuldade, pois a pista precisa ser maior que o modelismo e não é em qualquer lugar que ele pode realizar esse procedimento, devido o grande risco, tornando-se perigoso. Não é aconselhado pousos próximo de pessoas e em curtos espaços.
 
-Os multirotors vêm aumentando no mercado nos últimos anos. Em termos mais simples, um multirotor usa várias hélices, em vez de uma única lâmina do rotor, como em um helicóptero tradicional, para fornecer elevação. Além disso, não há rotor de cauda, utilizada para fornecer controle de guinada e contrariar o torque posto para fora por dirigir o principal rotor em um helicóptero. Por serem simétricos, o controle de um multirotor é mais fácil e mais estável. O que permite uma decolagem e uma aterrissagem mais pratica e com menos espaço.
-  
-Os multirotors voam através da utilização de dois princípios básicos: elevação (lift) e torque.  Multirotors são verdadeiramente um grande exercício de física newtoniana: toda ação tem uma reação igual e oposta. Em um helicóptero tradicional, o rotor principal gira na mesma direção. Para manter o corpo de girar para o outro lado, um rotor de cauda é implementado de forma a colocar uma pressão constante sobre a cauda para manter o corpo estável. O multirotor usa hélices contra-rotação para manter o corpo estável, enquanto as hélices girarem \cite{audronis}.
+Os multirotores vêm aumentando no mercado nos últimos anos. Os multirotores são estruturas com vários motores (dois ou mais rotores) e esses motores são fixos em uma estrutura, e os motores não precisão de ajustes como nos helicópteros. O Roll e o Pitch é feito apenas com a rotação do motor. Além disso, não há rotor de cauda, utilizada para fornecer controle de guinada e contrariar o torque posto para fora por dirigir o principal rotor em um helicóptero. Por serem simétricos, o controle de um multirotor é mais fácil e mais estável. O que permite uma decolagem e uma aterrissagem mais pratica e com menos espaço.
 
+Os multirotores voam através da utilização de dois princípios básicos: elevação (lift) e torque. Multirotores são verdadeiramente um grande exercício de física newtoniana: toda ação tem uma reação de mesma intensidade e sentido oposto. O multirotor usa  hélices diferentes e a contra-rotação para  manter o corpo  estável, pois dessa forma mantem-se a conservação do momento angular \cite{audronis}. Nos helicópteros tem-se o rotor de calda para evitar que o corpo girar e perca a estabilidade, o rotor de cauda é implementado de forma que mantenha a conservação de momento no helicóptero. 
+Na figura 8 é possível ver um multirotor, a representação mostra como que as hélices devem girar para que seja possível um voo estável. Esse princípio é aplicado a todos os multirodores e não apenas no quadrirotor. Sempre as hélices opostas (as que ficam uma em frente da outra) devem girar em mesma direção caso deseja-se entrar para frente.
+
+
+\begin{figure}[H]
+    \centering
+      \includegraphics[keepaspectratio=true,scale=0.5]{figuras/rotacao.eps}
+    \caption{Diagrama  de rotação das hélices de um quadricoptero estável. Fonte \cite{audronis}}
+    \label{fig:gira}
+\end{figure}
+
+O multirotor possui a mobilidade de ir para frente, para trás e de lado para o outro mudando apenas o sentido temporariamente das hélices como representado na imagem \ref{fig:gira}. Ao realizar essas manobrar ele pode inclinar o multirotor, alterando a direção do empuxo fornecido pelos rotores dessa forma realizando a curva mostrado na imagem \ref{fig:guinada}
 
 \begin{figure}[H]
     \centering
@@ -18,9 +28,6 @@ Os multirotors voam através da utilização de dois princípios básicos: eleva
     \label{fig:gira}
 \end{figure}
 
-Assim como um helicóptero tradicional, um multirotor se move para frente / trás e de lado para o outro pela inclinação. Inclinar o multirotor altera a direção do empuxo fornecido pelos rotores. Por exemplo, mergulhando o nariz e levantando a cauda, a direção na qual o fluxo de ar é empurrado é não só para baixo, mas também para a parte traseira do multirotor. Se toda a ação tem uma reação igual e opsta, empurrando o ar para a parte traseira do multirotor empurra para a frente o mesmo. Para fazer um mergulho de lado, a velocidade da hélice é reduzida, e para elevar um outro lado, a velocidade dos motores sobre que lado está aumentada.
-
-
 \begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/guinada.eps}
@@ -28,13 +35,22 @@ Assim como um helicóptero tradicional, um multirotor se move para frente / trá
     \label{fig:guinada}
 \end{figure}
 
-A desvantagem de utilizar os multirotors é a falta de aerodinâmica, tempo de voo reduzido e baixa eficiência dos motores. Contudo, para transporte de equipamento hospitalar, não exigirá um tamanho tão grande comparado a um aeromodelo.
+A desvantagem de utilizar  os multirotores  é a  falta  de aerodinâmica,  dessa for o tempo de voo é reduzido significativamente e a baixa  eficiência dos motores.  Contudo, para transporte de equipamento hospitalar, mas para o projeto será ideal, pois sua estabilidade, facilidade de controle, o tamanho reduzido e grande mobilidade compensa a falta de eficiência. A aplicação não precisa de percorrer distancias muito grande, com isso ele se encaixa perfeitamente nas especificações.
 
 \subsubsection{Especificação do VANT escolhido}
 
-O multirotor escolhido para esse projeto é o de oito hélices, ou octocóptero. Embora oito rotores ofereçam mais estabilidade, também diminuem o tempo de voo, porque aumenta a pressão sobre baterias. De fato, o número de rotores em relação ao tempo de voo é exponencial e não linear. Mas como o projeto exige um peso maior, para melhor controle do VANT, o ideal seria o octocóptero. 
+O multirotor escolhido para esse projeto é o de oito hélices, ou octocóptero. Em- bora oito rotores ofereçam mais estabilidade, também diminuem o tempo de voo, porque aumenta a quantidade de corrente exigida para alimentar todos os motores.  O projeto exige uma maior capacidade de carga, pois os equipamentos utilizados são considerados de alta densidade. Para que as especificações fossem atendidas, decidiu-se utilizar essa especificação por sua estabilidade e maior capacidade de gerar empuxo.
 
-O motor escolhido é o motor Tarot 4114 High Power Brushless (sem escova) Motor, de alta rotação. Ele é usado pelo modelo US 1000 também octocóptero que é utilizado para filmagens. Ele possui capacidade de empuxo de até 2.5 kg. Este motor possui um rotor que é magnetizado por imãs permanentes. Motores de corrente contínua possuem vários benefícios em relação aos motores com escova, dentre algumas estão: melhor característica velocidade x torque, maiores eficiência, vida útil, taxa de velocidade e é mais silencioso \cite{nascimento}.
+O motor escolhido é o motor Tarot 4114 High Power Brushless (sem escova), que é um motor de altas rotações, representado na figura \ref{fig:tarot2}.
+
+\begin{figure}[H]
+    \centering
+      \includegraphics[keepaspectratio=true,scale=0.5]{figuras/tarot2.eps}
+    \caption{Quadro de relação de um motor 4114.}
+    \label{fig:tarot2}
+\end{figure}
+
+Este motor é comumente utilizado em  multirotores, um exemplo o modelo US 1000 de filmagens. Ele possui capacidade de gerar um empuxo de até 2.5 kg e uma outra característica desse tipo de motor é a magnetização do rotor ser por imãs permanentes. Motores de corrente contínua possuem vários benefícios em relação aos motores com escova, dentre algumas estão: melhor característica velocidade x torque, maiores eficiência, vida útil, taxa de velocidade e é mais silencioso \cite{nascimento}.
 
 \begin{figure}[H]
     \centering
@@ -43,30 +59,30 @@ O motor escolhido é o motor Tarot 4114 High Power Brushless (sem escova) Motor,
     \label{fig:tarot}
 \end{figure}
 
-A hélice é um conjunto de pás com o mesmo centro, que ao ser girado causa uma propulsão na mesma direção. Utiliza-se duas pás por hélice. Quanto maior o passo da hélice, maior a velocidade alcançada pela aeronave e mais lenta é a resposta à manobras. Logo, o ideal é que o passo da hélice seja pequeno, pois é preferível uma melhor resposta à manobras, mesmo que seja preciso abrir mão de velocidade para tal \cite{VIOLATO}. A hélice escolhida é a 15x5 5.E Carbon Fiber Propellers L/H and R/H Rotation Suits DJI.
-
-\begin{figure}[H]
-    \centering
-      \includegraphics[keepaspectratio=true,scale=0.5]{figuras/elice.eps}
-    \caption{Carbon Fiber Propellers L/H and R/H Rotation Suits DJI. Fonte: \cite{dji}}
-    \label{fig:elice}
-\end{figure}
+A hélice é um conjunto de pás com o mesmo centro, que ao serem rotacionadas criam um deslocamento do ar em direção ao solo e pelo efeito da terceira lei de Newton o conjunto é impulsionado para o sentido oposto, dessa forma cria-se a sustentação necessária para o vôo.  Quanto maior o passo da hélice, maior a velocidade alcançada  pela aeronave e mais lenta é a resposta à manobras \cite{VIOLATO}. Para nossa proposta, utilizou-se uma hélice de tamanho médio, pois a aplicação necessita de velocidade e também de uma mobilidade boa. A hélice escolhida é a 15x5 5.E Carbon  Fiber  Propellers  L/H  and  R/H  Rotation  Suits DJI.
 
 \begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/diagramaEstru.eps}
-    \caption{Esquemático de conexão e funcionamento do ESC. \cite{pinto}}
+    \caption{\cite{VIOLATO}. Fonte: \cite{pinto}}
+    \label{fig:elice}
+\end{figure}
+
+Os ESC (Eletronic speed control) é quem torna possível o voo, é o controle eletrônico da velocidade, ele é o responsável por alimentar o motor e mandar a potência que é necessária, ele impede sobrecarga nos motores, funcionando também como um módulo de proteção. Os ESCS são específicos para cada motor, eles devem ser dimensionados corretamente, pois um dimensionamento indevido pode ocasionar em uma sobrecarga nos motores e queima-los.  Cada motor tem o seu ESC individual, dessa forma é possível controlar individualmente cada motor. Os ESCs são ligados no circuito do VANT como mostra a figura \ref{fig:diagramaEstru}.
+ 
+
+\begin{figure}[H]
+    \centering
+      \includegraphics[keepaspectratio=true,scale=0.5]{figuras/elice.eps}
+    \caption{Carbon Fiber Propellers L/H and R/H Rotation Suits DJI. \cite{dji}}
     \label{fig:diagramaEstru}
 \end{figure}
 
-Os ESC (Eletronic speed control) é quem torna possível o voo. O ESC crava a tensão para ligar o motor e aliviá-lo de volta para mantê-los girando a uma velocidade baixa em um acelerador baixo. Além disso, como se aplica mais entrada do acelerador, o ESC acelera o motor de maneira uniforme.  Eles devem ser cuidadosamente equilibrados com o motor para dar energia suficiente para o motor e não queimar. No caso, deve ter um ESC individual para cada motor. 
-
 \subsubsection{Escolha dos materiais}
 
-A escolha de determinados materiais em projetos de engenharia depende de como os mesmos irão se comportar diante de um determinado esforço nas várias situações de aplicação.
+A escolha de determinados materiais nos projeto da engenharia é determinante para um bom projeto, para a escolha leva-se em  consideração os ambientes em que serão operados, dessa forma é possível entender o comportamento dos materiais diante a aplicação, dessa forma podendo garantir uma maior solidez e confiabilidade no projeto.
 
-Os componentes que farão parte do drone serão os motores de alto desempenho, as hélices, circuitos impressos e integrados e o corpo.
-Esta delimitação de materiais que satisfazem as necessidades do drone foi feita levando em conta o tipo dos esforços que estarão presentes, por exemplo, na decolagem, aterrissagem e durante o tempo de voo. Para as hélices e para o motor foi escolhida a fibra de carbono e para o restante dos materiais a opção foi da fibra de vidro.
+Os componentes que farão parte do drone serão os motores de alto desempenho, as hélices, componentes elétricos e a estrutura do corpo. Esta delimitação de materiais que satisfazem as necessidades do drone foi feita levando  em conta o tipo dos esforços que estarão  presentes,  por exemplo, na decolagem, aterrissagem  e durante o tempo  de voo. Para as hélices e para  o motor foi escolhida  a fibra de carbono  e para  o restante dos materiais da estrutura a opção foi da fibra de vidro.
 
 A justificativa para a escolha destes materiais foi baseada de acordo com o módulo de elasticidade, a ductilidade, o limite de resistência à tração e a tenacidade. 
 
@@ -108,13 +124,13 @@ Portanto, a escolha dos materiais do drone pode ser explicada de acordo com a ta
 
 Embora o alongamento percentual dos materiais poliméricos em geral seja muito maior do que os dos materiais ecolhidos para a aplicação do drone, esta característica é exibida no domínio plástico, ou seja, o material não se romperá mais perderá a qualidade devido a uma quantidade significativa de deformação.
 
-Como conclusão do material a ser utilizado, é interessante partes da estrutura, como os braços, frame central, helices e trem de pouso, utilizando fibra de carbono. Partes como a carcaça e componentes eletrônicos, poderão ser utilizados polímeros em geral. 
+Como conclusão do material a ser utilizado, é interessante partes da estrutura, como os braços, frame central, hélices e trem de pouso, utilizando fibra de carbono. Partes como a carcaça e componentes eletrônicos, poderão ser utilizados polímeros em geral. 
 
 \subsubsection{Construção do VANT}
 
-Considerando a parte mais importante do projeto, o desfibrilador será acoplado no VANT, na qual suas medidas são utilizadas como referencia para modelagem do frame central. a modelagem dos  braços e hélices do drone, não serão necessários, devido eles serão utilizados do modelo de um VANT S1000.
+Considerando a parte mais importante do projeto, o desfibrilador será acoplado no VANT, na qual suas medidas são utilizadas como referência para modelagem do frame central.  A modelagem dos braços e hélices do drone,  não serão necessários, devido ao fato que eles serão utilizados do modelo similar ao de um VANT S1000
 
-Para inicio da construção do VANT, consideramos as medidas de um DEA (Desfibrilador externo automático) vendido no mercado, chamado HeartSine samaritan PAD SAM 300P. Com as seguintes  medidas:
+Para inicio da construção do VANT, consideramos as medidas de um DEA (Desfibrilador externo automático) vendido no mercado, chamado HeartSine samaritan PAD SAM 300P  como o representado na figura \ref{fig:heart}:
 
 \begin{figure}[H]
     \centering
@@ -123,7 +139,7 @@ Para inicio da construção do VANT, consideramos as medidas de um DEA (Desfibri
     \label{fig:heart}
 \end{figure}
 
-O frame central projetado será baseado no frame central do S1000, porém adaptado ao desfibrilador e o reanimador. 
+O frame central projetado será baseado no frame central do S1000, porém adaptado ao desfibrilador e ao reanimador ventilatório, como é possível ver na figura \ref{fig:framecentral}: 
 
 \begin{figure}[H]
     \centering
@@ -133,7 +149,7 @@ O frame central projetado será baseado no frame central do S1000, porém adapta
 \end{figure}
 
 
-Como as medidas, seguindo o manual, do frame central do S1000 é 337.5mm da ponta de um braço até outra, para o nosso projeto, será aumentado  200mm em relação ao centro, 100mm para um lado e 100mm par outro. Como mostra a figura a seguir:
+Como as medidas, seguindo o manual, do frame central do S1000 é 337.5mm da ponta de um braço até outra, para o nosso projeto, será aumentado  200mm em relação ao centro, 100mm para um lado e 100mm par outro. Como mostra na figura \ref{fig:drawing}:
 
 \begin{figure}[H]
     \centering
@@ -142,7 +158,7 @@ Como as medidas, seguindo o manual, do frame central do S1000 é 337.5mm da pont
     \label{fig:drawing}
 \end{figure}
 
-Como a figura acima mostra, as formas triangulares do lado esquerdo são “buracos” na qual tem como função deixar o frame mais leve, contudo, não perder sua utilidade em ser a base do VANT. O lado direito não possui esses espaços devido ser o local para alocar o desfibrilador. O lado esquerdo alocará a antena e até duas baterias , na qual serão presas por velcros, amarrados entre os “buracos” do frame. Também serão parafusadas os braços e a carcaça do VANT no mesmo.
+Como é possível ver na figura 17, as formas triangulares do lado esquerdo são “buracos” na qual tem como função deixar o frame mais leve, contudo, não perder sua utilidade em ser a base do VANT. O lado direito não possui esses espaços devido ser o local para alocar o desfibrilador. O lado esquerdo alocará a antena e até duas baterias , na qual serão presas por velcros, amarrados entre os “buracos” do frame. Também serão parafusadas os braços e a carcaça do VANT no mesmo.
 
 \begin{figure}[H]
     \centering
@@ -151,7 +167,7 @@ Como a figura acima mostra, as formas triangulares do lado esquerdo são “bura
     \label{fig:drawinfinfo}
 \end{figure}
 
-Já o frame inferior será parafusado o trem de pouso e o frame superior. Ambos os frames serão unidos como mostra a imagem 5, tendo um espaço de 42mm. O espaço entre os dois frames é destinado para alocar a parte dos controladores de voo , ESC e o conjunto dos fios.
+Já o frame inferior, figura \ref{fig:drawinfinfo}, será parafusado ao trem de pouso e ao frame superior.  Ambos os frames serão unidos como mostra a figura \ref{fig:catia1}, tendo um espaço de 42mm. O espaço entre os dois frames é destinado para alocar a parte dos controladores de voo , ESC e o conjunto dos fios.
 
 \begin{figure}[H]
     \centering
@@ -160,7 +176,7 @@ Já o frame inferior será parafusado o trem de pouso e o frame superior. Ambos 
     \label{fig:catia1}
 \end{figure}
 
-Por meio da plataforma CATIA, foi possível idealizar o projeto EmerVANT, em escala real. Para visualizar de melhor forma, utilizou-se o KeyShot, na qual ele renderiza VANT.
+Por meio da plataforma CATIA, foi possível idealizar o projeto EmerVANT, em escala real. Para visualizar de melhor forma, utilizou-se o KeyShot, na qual ele renderiza VANT, como mostrado na figura \ref{fig:keyshot1}:
 
 \begin{figure}[H]
     \centering
@@ -169,7 +185,7 @@ Por meio da plataforma CATIA, foi possível idealizar o projeto EmerVANT, em esc
     \label{fig:keyshot1}
 \end{figure}
 
-O retângulo vermelho, na carcaça do EmerVANT, é a gaveta para retirada dos eletrodos do Desfibrilador Externo Automático, na qual o será orientado para o leigo, pela central, onde se encontra o eletrodos, juntamente todos os procedimentos de atendimento.
+O retângulo vermelho, presente na parte superior da estrutura do VANT, mostrado na figura 21, é a gaveta para retirada dos eletrodos do Desfibrilador Externo Automático, o local onde os eletrodos ficam guardados será passado para o usuário através do procedimento de instruções para a utilização do EmerVant. A central ficará responsável por dar todas as informações necessárias para a utilização do equipamento e atendimento.
 
 \begin{figure}[H]
     \centering

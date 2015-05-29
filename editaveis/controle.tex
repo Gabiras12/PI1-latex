@@ -30,83 +30,83 @@ O módulo Pixhawk flagship pode ser utilizado visando as novas opções de perif
 
 \textbf{Processador}
 \begin{itemize}
-	\item 32-bit ARM Cortex M4 core with FPU
+	\item 32-bit ARM Cortex M4 com FPU
 	\item 168 Mhz/256 KB RAM/2 MB Flash 
 	\item 32-bit failsafe co-processor
 \end{itemize}
 
 \textbf{Sensores}
 \begin{itemize}
-\item MPU6000 as main accel and gyro
-\item ST Micro 16-bit gyroscope
-\item ST Micro 14-bit accelerometer/magnetometer MEAS barometer
+\item MPU6000 com aceleração principal e giroscópio
+\item ST Micro 16-bit giroscópio
+\item ST Micro 14-bit acelerômetro /magnetmetro  MEAS barômetro
 \end{itemize}
 
 \textbf{Power}
 \begin{itemize}
-\item Ideal diode controller with automatic failover
-\item Servo rail high-power (7 V) and high-current ready
-\item All peripheral outputs over-current protected, all inputs ESC protected
+\item Controlador possui um diodo ideal com \textit{failover} automático.
+\item Servo anteparo de alta potência (7V) e alta corrente de propensão.
+\item Todas as saídas periféricas com \textit{over-current}, assim como todas as entradas ESC, possuem proteção.
 \end{itemize}
 
 \textbf{Interfaces}
 \begin{itemize}
-\item 5x UART serial ports, 1 high-power capable, 2x with HW flow control 
-\item Spektrum DSM/DSM2/DSM-X Satellite input
-\item Futaba S.BUS input (output not yet implemented)
-\item PPM sum signal
-\item RSSI (PWM or voltage) input
+\item 5x UART com porta serial, 1 componente \textit{high-power}, 2x HW com controle de fluxo.
+\item Spektrum DSM/DSM2/DSM-X entrada de satélite
+\item \textit{Futaba} S.BUS entrada ( saída não implementada)
+\item PPM sinal de soma
+\item RSSI (PWM ou tensão) entrada
 \item I2C, SPI, 2x CAN, USB
-\item 3.3 and 6.6 ADC inputs
+\item 3.3 e 6.6 ADC entradas
 \end{itemize}
 
 \textbf{Dimensions}
 \begin{itemize}
-\item Weight 38 g (1.3 oz)
-\item Width 50 mm (2.0”)
-\item Height 15.5 mm (.6”)
-\item Length 81.5 mm (3.2”)
+\item Peso 38 g (1.3 oz)
+\item Largura 50 mm (2.0”)
+\item Altura 15.5 mm (.6”)
+\item Comprimentob 81.5 mm (3.2”)
 \end{itemize}
 
 \begin{figure}[H]
 	\centering
 	  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/pix1.eps}
-	\caption{Conexão}
+	\caption{Visão geral da Pixhawk. Fonte \cite{pixhawk}}
 	\label{fig:pix1}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/pix2.eps}
-	\caption{Conexão}
+	\caption{Entradas  de comunicação de dados  do Pixhawk. Fonte \cite{pixhawk}}
 	\label{fig:pix2}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/pix3.eps}
-	\caption{Conexão}
+	\caption{Esquema da placa controladora Pixhawk. Fonte \cite{pixhawk}}
 	\label{fig:pix3}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/pix4.eps}
-	\caption{Conexão}
+	\caption{Esquema da placa controladora Pixhawk. Fonte \cite{pixhawk}}
 	\label{fig:pix4}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/pix5.eps}
-	\caption{Conexão}
+	\caption{Esquema da placa controladora Pixhawk. Fonte \cite{pixhawk}}
 	\label{fig:pix5}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/pix6.eps}
-	\caption{Conexão}
+	\caption{Esquema da plana controladora Pixhawk. Fonte \cite{pixhawk}}
 	\label{fig:pix6}
 \end{figure}
 
@@ -131,7 +131,7 @@ Sendo esses módulos, baseados em \cite{pastor}
 \begin{figure}[H]
 	\centering
 	  \includegraphics[keepaspectratio=true,scale=0.7]{figuras/diagrama.eps}
-	\caption{Diagrama simplificado da comunicação do VANT com a Central}
+	\caption{Diagrama simplificado da comunicação do VANT com a Central. Fonte \cite{Branco}}
 	\label{fig:diagrama}
 \end{figure}
 

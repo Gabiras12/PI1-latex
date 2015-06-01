@@ -9,14 +9,14 @@ Os VANT’s de asa fixa, no caso, os aviões não tripulados, apesar de serem r�
 Os multirotores vêm aumentando no mercado nos últimos anos. Os multirotores são estruturas com vários motores (dois ou mais rotores) e esses motores são fixos em uma estrutura, e os motores não precisão de ajustes como nos helicópteros. O Roll e o Pitch é feito apenas com a rotação do motor. Além disso, não há rotor de cauda, utilizada para fornecer controle de guinada e contrariar o torque posto para fora por dirigir o principal rotor em um helicóptero. Por serem simétricos, o controle de um multirotor é mais fácil e mais estável. O que permite uma decolagem e uma aterrissagem mais pratica e com menos espaço.
 
 Os multirotores voam através da utilização de dois princípios básicos: elevação (lift) e torque. Multirotores são verdadeiramente um grande exercício de física newtoniana: toda ação tem uma reação de mesma intensidade e sentido oposto. O multirotor usa  hélices diferentes e a contra-rotação para  manter o corpo  estável, pois dessa forma mantem-se a conservação do momento angular \cite{audronis}. Nos helicópteros tem-se o rotor de calda para evitar que o corpo girar e perca a estabilidade, o rotor de cauda é implementado de forma que mantenha a conservação de momento no helicóptero. 
-Na figura 8 é possível ver um multirotor, a representação mostra como que as hélices devem girar para que seja possível um voo estável. Esse princípio é aplicado a todos os multirodores e não apenas no quadrirotor. Sempre as hélices opostas (as que ficam uma em frente da outra) devem girar em mesma direção caso deseja-se entrar para frente.
+Na figura \ref{fig:rotacao} é possível ver um multirotor, a representação mostra como que as hélices devem girar para que seja possível um voo estável. Esse princípio é aplicado a todos os multirodores e não apenas no quadrirotor. Sempre as hélices opostas (as que ficam uma em frente da outra) devem girar em mesma direção caso deseja-se entrar para frente.
 
 
 \begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/rotacao.eps}
-    \caption{Diagrama  de rotação das hélices de um quadricoptero estável. Fonte \cite{audronis}}
-    \label{fig:gira}
+    \caption[Diagrama  de rotação das hélices de um quadricoptero estável]{Diagrama  de rotação das hélices de um quadricoptero estável. Fonte \cite{audronis}}
+    \label{fig:rotacao}
 \end{figure}
 
 O multirotor possui a mobilidade de ir para frente, para trás e de lado para o outro mudando apenas o sentido temporariamente das hélices como representado na imagem \ref{fig:gira}. Ao realizar essas manobrar ele pode inclinar o multirotor, alterando a direção do empuxo fornecido pelos rotores dessa forma realizando a curva mostrado na imagem \ref{fig:guinada}
@@ -31,7 +31,7 @@ O multirotor possui a mobilidade de ir para frente, para trás e de lado para o 
 \begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/guinada.eps}
-    \caption{Diagrama de guinada e rolagem de um quadricóptero. Fonte \cite{audronis}}
+    \caption[Diagrama de guinada e rolagem de um quadricóptero.]{Diagrama de guinada e rolagem de um quadricóptero. Fonte \cite{audronis}}
     \label{fig:guinada}
 \end{figure}
 
@@ -46,7 +46,7 @@ O motor escolhido é o motor Tarot 4114 High Power Brushless (sem escova), que �
 \begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/tarot2.eps}
-    \caption{Motor Tarot 4114 High Power Brussless}
+    \caption{Motor Tarot 4114 High Power Brussless. \cite{tarot}}
     \label{fig:tarot2}
 \end{figure}
 
@@ -55,7 +55,7 @@ Este motor é comumente utilizado em  multirotores, um exemplo o modelo US 1000 
 \begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/tarot.eps}
-    \caption{Quadro de relação de um motor 4114.}
+    \caption{Quadro de relação de um motor 4114.\cite{tarot}}
     \label{fig:tarot}
 \end{figure}
 
@@ -64,11 +64,11 @@ A hélice é um conjunto de pás com o mesmo centro, que ao serem rotacionadas c
 \begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/diagramaEstru.eps}
-    \caption{Carbon Fiber Propellers L/H and R/H Rotation Suits DJI. \cite{pinto}}
+    \caption[Carbon Fiber Propellers L/H and R/H Rotation Suits DJI.]{Carbon Fiber Propellers L/H and R/H Rotation Suits DJI. \cite{pinto}}
     \label{fig:elice}
 \end{figure}
 
-Os ESC (Eletronic speed control) é quem torna possível o voo, é o controle eletrônico da velocidade, ele é o responsável por alimentar o motor e mandar a potência que é necessária, ele impede sobrecarga nos motores, funcionando também como um módulo de proteção. Os ESCS são específicos para cada motor, eles devem ser dimensionados corretamente, pois um dimensionamento indevido pode ocasionar em uma sobrecarga nos motores e queima-los.  Cada motor tem o seu ESC individual, dessa forma é possível controlar individualmente cada motor. Os ESCs são ligados no circuito do VANT como mostra a figura \ref{fig:diagramaEstru}.
+O ESC (\textit{Eletronic speed control}) é quem torna possível o voo, é o controle eletrônico da velocidade, ele é o responsável por alimentar o motor e mandar a potência que é necessária, ele impede sobrecarga nos motores, funcionando também como um módulo de proteção. Os ESCS são específicos para cada motor, eles devem ser dimensionados corretamente, pois um dimensionamento indevido pode ocasionar em uma sobrecarga nos motores e queima-los.  Cada motor tem o seu ESC individual, dessa forma é possível controlar individualmente cada motor. Os ESCs são ligados no circuito do VANT como mostra a figura \ref{fig:diagramaEstru}.
  
 
 \begin{figure}[H]

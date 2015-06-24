@@ -16,11 +16,19 @@ Além disso, deve-se também conhecer a densidade de energia (relação entre qu
 
 \subsubsection{Atuação do circuito na bateria}
 
-O diagrama da figura \ref{fig:esquemabateria}, demonstra funciona o sistema de alimentação do circuito elétrico do VANT. É possível identificar a bateria principal (batt), ela é ligada a porta de alimentação do modulo de potência 3DR Pixhawk, que foi usado pois a bateria que está sendo usada necessita devido suas especificações. Posteriormente tudo é ligado a uma placa de distribuição de potência (PDB), onde ela é a responsável para suprir a necessidade do sistema, ela que alimentará a controladora Pixhawk com seus periféricos e mandará energia suficiente para suprir a corrente exigida dos escs para o funcionamento dos motores. Por segurança, há uma segunda fonte de alimentação, uma fonte de 5V (BEC), ela é para casos onde houver uma falha na fonte primária, dessa forma ela será automaticamente ativada para evitar possíveis falhas \cite{pix}.
+O diagrama da figura \ref{fig:esquemabateria}, demonstra funciona o sistema de alimentação do circuito elétrico do VANT. É possível identificar 
+a bateria principal (batt), ela é ligada a porta de alimentação do modulo de potência 3DR Pixhawk, que foi usado pois a bateria que está sendo
+usada necessita devido suas especificações. Posteriormente tudo é ligado a uma placa de distribuição de potência (PDB), onde ela é a
+responsável para suprir a necessidade do sistema, ela que alimentará a controladora Pixhawk com seus periféricos e mandará energia
+suficiente para suprir a corrente exigida dos escs para o funcionamento dos motores. 
+
+Por segurança, há uma segunda fonte de alimentação, 
+uma fonte de 5V (BEC), ela é para casos onde houver uma falha na fonte primária, dessa forma ela será automaticamente ativada para evitar 
+possíveis falhas \cite{pix}.
 
 \begin{figure}[H]
     \centering
-	\includegraphics[keepaspectratio=true,scale=0.6]{figuras/esquemabateria.eps}
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/esquemabateria.eps}
     \caption{Diagrama de blocos da bateria ligada ao controlador. Fonte: \cite{pixhawk}}
     \label{fig:esquemabateria}
 \end{figure}
@@ -66,51 +74,6 @@ o que pode ocasionar combustão. Com isso, é necessária a utilização de carr
 de taxa de carga, utilização de balanceador de células evitando que a carga seja aplicada diretamente aos 
 terminais principais do pack sem controle de voltagem, além de evitar o procedimento de carga ao identificar 
 que as células do pack estão danificadas. \cite{gibbs}
-
-\subsubsection{Análise de custo}
-Considerando os requisitos estipulados no escopo do projeto, foram levantadas discussões e pesquisas que culminaram na escolha da tecnologia lítio polímero (LiPO) para utilização na parte da alimentação energética do Vant. Essa tecnologia se sobressaiu em relação a todas outras estudadas por ser baterias que apresentam baixo peso, alta tensão, além de sua capacidade de fornecer elevadas correntes ao circuito e já ser uma tecnologia amplamente utilizada no meio aeroespacial.
-
-Durante a escolha da bateria foram analisadas várias empresas ao redor de todo o mundo, sendo elas:
-
-\begin{itemize}
- 
-\item Gens Tattu (Americana)
-
-\item Foxtech (Chinesa)
-
-\item Max Amps (Americana)
-
-\item Robokits (Indiana)
-
-\item Dronera (Norueguesa)
-
-\item Honcell (Chinesa)
-
-\end{itemize}
-
-A empresa fornecedora foi escolhida com base em diversos aspectos, os quais foram: impostos relativos a importação, facilidade de contato com os fabricantes, renome internacional da empresa, densidade energética da bateria além do custo da bateria.
-
-A  Tattu foi a empresa escolhida como fornecedora da bateria.  Dentre os fatores que mais pesaram na escolha foram a proximidade em relação ao Brasil, a facilidade de comunicação com o fabricante e também a qualidade da bateria. Foi observado que mesmo nas diferentes áreas ao redor do mundo as baterias não apresentam uma grande variação em relação ao custo, o que também favoreceu a empresa americana visto que as taxas de importação são relativamente inferiores, sendo que as únicas baterias relativamente mais baratas eram aquelas com um peso bastante superior às outras.
-
-As especificações da bateria escolhida, como mostradas na figura 43, levam como base a potência  necessária de vôo do VANT, que, por sua vez, está relacionada ao tempo de vôo e também ao seu peso. Serão  necessárias  apenas  uma  bateria com capacidade  de  22000 mAh,  o que  somaria aproximadamente 500 dólares ao custo do projeto, cerca de 1574 reais de acordo com as cotações  atuais. A figura 44 faz uma comparação de preço com outras baterias encontradas no mercado..
-
-
-\begin{figure}[H]
-    \centering
-	\includegraphics[keepaspectratio=true,scale=0.6]{figuras/baterialipo.eps}
-    \caption{Bateria LiPO escolhida e suas especificações. Fonte: \cite{gensace}}
-    \label{fig:baterialipo}
-\end{figure}
-
-\textbf{Tabela comparativa entre baterias}
-
-\begin{figure}[H]
-    \centering
-	\includegraphics[keepaspectratio=true,scale=0.6]{figuras/tabelabateria.eps}
-    \caption{Tabela comparativa de baterias.}
-    \label{fig:tabelabateria}
-\end{figure}
-
 
 \subsubsection{Cálculo da autonomia e taxa de descarga do EmerVant}
 
@@ -196,23 +159,125 @@ As baterias de Lítio Polimerizado tem dois requerimentos em relação as suas c
 
 O carregador Li-PO é um dispositivo limitador de tensão que é semelhante ao sistema de chumbo-ácido. A diferença está em uma tensão mais elevada por célula, tolerância de tensão mais apertado e a ausência de carga de flutuação em plena carga.
 
-As baterias de polímero de Lítio não podem ser carregadas por qualquer tipo de carregador, portanto, o escolhido para atuar no sistema de recarga do EmerVant foi o carregador iMax B6 (figura \ref{fig:carregador1}), se adequa de uma forma que carrega e balanceia adequadamente vários tipos de bateria de lítio, tais como a utilizada neste projeto (LiPo 6s), Li-íon e a série de bateria LiFe.
+As baterias de polímero de Lítio não podem ser carregadas por qualquer tipo de carregador, portanto, o escolhido para atuar no 
+sistema de recarga do EmerVant foi o carregador \textit{iMax} B6 (figura \ref{fig:carregador1}), se adequa de uma forma que carrega e 
+balanceia adequadamente vários tipos de bateria de lítio, tais como a utilizada neste projeto (LiPo 6s), Li-íon e a série de bateria LiFe.
 
 
  \begin{figure}[H]
     \centering
-	\includegraphics[keepaspectratio=true,scale=0.4]{figuras/carregador1.eps}
-    \caption{Carregador iMax B6. Fonte: \cite{carregador1}}
+	\includegraphics[keepaspectratio=true,scale=0.2]{figuras/carregador1.eps}
+    \caption{Carregador \textit{iMax} B6. Fonte: \cite{carregador1}}
     \label{fig:carregador1}
 \end{figure}
 
 
-Segundo o manual do usuário iMax B6 \cite{ibmax}, independente de qual seja a bateria de lítio usada, não será necessário se conectar a um balanceador externo para efetuar a carga de balanceamento, pois o mesmo emprega um balanceador de tensão de célula individual. Além disso, o B6 monitora e balanceia individualmente cada célula da bateria, onde apresenta uma mensagem de erro e é automaticamente interrompido caso apresente uma tensão anormal de qualquer célula individual. 
+Segundo o manual do usuário \textit{iMax} B6 \cite{ibmax}, independente de qual seja a bateria de lítio usada, não será necessário se conectar a um balanceador externo para efetuar a carga de balanceamento, pois o mesmo emprega um balanceador de tensão de célula individual. Além disso, o B6 monitora e balanceia individualmente cada célula da bateria, onde apresenta uma mensagem de erro e é automaticamente interrompido caso apresente uma tensão anormal de qualquer célula individual. 
 
 A figura a seguir mostra o menu do B6, que possui uma interface fácil de se interpretar, onde indica o carregamento e os ciclos em um processo simples, podendo ser feito de maneira rápida e precisa. O carregador não vem com a fonte de alimentação, porém contém um conector de entrada de CC que possui um \textit{plug} com garras tipo jacaré.
 
  \begin{figure}[H]
     \centering
-	\includegraphics[keepaspectratio=true,scale=0.5]{figuras/manual.eps}
-    \caption{Menu do iMax B6. Fonte: \cite{ibmax}}
+	\includegraphics[keepaspectratio=true,scale=0.4]{figuras/manual.eps}
+    \caption{Menu do \textit{iMax} B6. Fonte: \cite{ibmax}}
 \end{figure}
+
+\subsubsection{Análise de custos}
+
+\textbf{Bateria}
+
+Considerando os requisitos estipulados no escopo do projeto, foram levantadas discussões e pesquisas que culminaram na escolha da tecnologia lítio polímero (LiPO) para utilização na parte da alimentação energética do Vant. Essa tecnologia se sobressaiu em relação a todas outras estudadas por ser baterias que apresentam baixo peso, alta tensão, além de sua capacidade de fornecer elevadas correntes ao circuito e já ser uma tecnologia amplamente utilizada no meio aeroespacial.
+
+Durante a escolha da bateria foram analisadas várias empresas ao redor de todo o mundo, sendo elas:
+
+\begin{itemize}
+ 
+\item Gens Tattu (Americana)
+
+\item Foxtech (Chinesa)
+
+\item Max Amps (Americana)
+
+\item Robokits (Indiana)
+
+\item Dronera (Norueguesa)
+
+\item Honcell (Chinesa)
+
+\end{itemize}
+
+A empresa fornecedora foi escolhida com base em diversos aspectos, os quais foram: impostos relativos a importação, facilidade de contato com os fabricantes, renome internacional da empresa, densidade energética da bateria além do custo da bateria.
+
+A  Tattu foi a empresa escolhida como fornecedora da bateria.  Dentre os fatores que mais pesaram na escolha foram a proximidade em relação ao Brasil, a facilidade de comunicação com o fabricante e também a qualidade da bateria. Foi observado que mesmo nas diferentes áreas ao redor do mundo as baterias não apresentam uma grande variação em relação ao custo, o que também favoreceu a empresa americana visto que as taxas de importação são relativamente inferiores, sendo que as únicas baterias relativamente mais baratas eram aquelas com um peso bastante superior às outras.
+
+As especificações da bateria escolhida levam como base a potência necessária de vôo do VANT, que, por sua vez, está relacionada ao tempo 
+de vôo e também ao seu peso.  Serão necessárias duas baterias com capacidade de 22000 mAh cada, o que somaria aproximadamente 560 dólares
+ao custo do projeto, cerca de 1746,50 reais por média de acordo com as cotações atuais, sem impostos. A figura \ref{fig:baterialipo}, respectivamente, 
+mostram a imagem ilustrativa da bateria e suas especificações, e logo abaixo, na tabela \ref{fig:tabelabateria}, foi feita uma comparação de preço, com outras 
+baterias encontradas no mercado.
+
+
+\begin{figure}[H]
+    \centering
+	\includegraphics[keepaspectratio=true,scale=0.6]{figuras/baterialipo.eps}
+    \caption{Bateria LiPO escolhida e suas especificações. Fonte: \cite{gensace}}
+    \label{fig:baterialipo}
+\end{figure}
+
+\begin{table*}
+    \centering
+    \caption{Tabela comparativa de baterias.}
+\begin{tabular}{|p{0.10\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|p{0.15\linewidth}|}
+\hline
+Voltagem&Capacidade&Empresa&Preço&Peso&Densidade Energética\\ \hline
+
+22.2(v)&22000(mAH)&ONBO&2122,00R\$&2467g&8,91 mAH/g \\ \hline
+
+22.2(v)&22000(mAH)&Alien Power System&1003,20R\$&2130g&10,32 mAH/g \\ \hline
+
+22.2(v)&22000(mAH)&Venom&1860,00R\$&2800g&7,86 mAH/g \\ \hline
+
+22.2(v)&22000(mAH)&Harris Aerial&1612,00R\$&2600g&8.46 mAH/g \\ \hline
+
+22.2(v)&22000(mAH)&Pulse&1798,00R\$&2609g&8,76 mAH/g \\ \hline
+
+22.2(v)&22000(mAH)&Gens Ace&1619,00R\$&2509g&8,76 mAH/g \\ \hline
+
+25.9(v)&22000(mAH)&Dronera&2232,00R\$&2925g&6,06 mAH/g \\ \hline
+
+22.2(v)&22000(mAH)&Foxtech&1450,80R\$&2800g&7,85 mAH/g \\ \hline
+
+22.2(v)&22000(mAH)&Tattu&1574,00R\$&2509g&8,76 mAH/g \\ \hline
+
+22.2(v)&22000(mAH)&MaxAmps&2174,00R\$&2580g&8,52mAH/g \\ \hline
+\end{tabular}
+    \label{fig:tabelabateria}
+\end{table*}
+
+\indent \textbf{Carregador}
+
+Após diversas pequisas em empresas especializadas em venda e utilização de tal conjunto de células optou-se por dois 
+carregadores \textit{iMax} B6 (figura \ref{fig:carregador1}), os quais suportam até 6 células, cada, em baterias de LiPo, e 
+fornecem voltagem individual de cada célula durante a carga com atualizações em tempo real durante o ciclo de carga.
+
+Dentre os diversos orçamentos encontrados em lojas virtuais, como pode ser visto na tabela \ref{custos_carregador} cada carregador 
+custará aproximadamente R\$ 221,57 totalizando R\$443,14, visto variações na economia. 
+\pagebreak
+\begin{table*}[!ht]
+    \centering
+    \caption{Tabela de preços do carregador \textit{iMax} B6 com a fonte.}
+\begin{tabular}{|p{0.40\linewidth}|p{0.15\linewidth}|}
+\hline
+LOJA & PREÇO \\ \hline
+Bazar do Airsoft (virtual) &R\$ 220,00 \\ \hline
+El Produto.co (virtual)&R\$ 239,99 \\ \hline
+Jales Modelismo (virtual)&R\$ 149,00 \\ \hline
+Mazza Import’s (virtual)&R\$ 169,00 \\ \hline
+Brasília Modelismo (virtual)&R\$ 230,00 \\ \hline
+FAB Modelismo (virtual)&R\$ 279,00 \\ \hline
+Hobby Extreme (virtual)&R\$ 264,00 \\ \hline
+
+\end{tabular}
+    \label{custos_carregador}
+\end{table*}
+ 

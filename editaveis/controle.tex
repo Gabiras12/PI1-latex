@@ -30,44 +30,43 @@ O módulo Pixhawk flagship pode ser utilizado visando as novas opções de perif
 
 \textbf{Processador}
 \begin{itemize}
-	\item 32-bit ARM Cortex M4 com FPU
-	\item 168 Mhz/256 KB RAM/2 MB Flash 
-	\item 32-bit failsafe co-processor
+	\item 32-bit ARM Cortex M4 com FPU;
+	\item 168 Mhz/256 KB RAM/2 MB Flash;
+	\item 32-bit \textit{failsafe co-processor}.
 \end{itemize}
 
 \textbf{Sensores}
 \begin{itemize}
-\item MPU6000 com aceleração principal e giroscópio
-\item ST Micro 16-bit giroscópio
-\item ST Micro 14-bit acelerômetro /magnetmetro  MEAS barômetro
+\item MPU6000 com aceleração principal e giroscópio;
+\item ST Micro 16-bit giroscópio;
+\item ST Micro 14-bit acelerômetro /magnetmetro  MEAS barômetro.
 \end{itemize}
 
-\textbf{Power}
+\textbf{Alimentação}
 \begin{itemize}
-\item Controlador possui um diodo ideal com \textit{failover} automático.
-\item Servo anteparo de alta potência (7V) e alta corrente de propensão.
+\item Controlador possui um diodo ideal com \textit{failover} automático;
+\item Servo anteparo de alta potência (7V) e alta corrente de propensão;
 \item Todas as saídas periféricas com \textit{over-current}, assim como todas as entradas ESC, possuem proteção.
 \end{itemize}
 
 \textbf{Interfaces}
 \begin{itemize}
-\item 5x UART com porta serial, 1 componente \textit{high-power}, 2x HW com controle de fluxo.
-\item Spektrum DSM/DSM2/DSM-X entrada de satélite
-\item \textit{Futaba} S.BUS entrada ( saída não implementada)
-\item PPM sinal de soma
-\item RSSI (PWM ou tensão) entrada
-\item I2C, SPI, 2x CAN, USB
-\item 3.3 e 6.6 ADC entradas
+\item 5x UART com porta serial, 1 componente \textit{high-power}, 2x HW com controle de fluxo;
+\item \textit{Spektrum} DSM/DSM2/DSM-X entrada de satélite;
+\item \textit{Futaba} S.BUS entrada ( saída não implementada);
+\item PPM sinal de soma;
+\item RSSI (PWM ou tensão) entrada;
+\item I2C, SPI, 2x CAN, USB;
+\item 3.3 e 6.6 ADC entradas.
 \end{itemize}
 
-\textbf{Dimensions}
+\textbf{Dimensões}
 \begin{itemize}
-\item Peso 38 g (1.3 oz)
-\item Largura 50 mm (2.0”)
-\item Altura 15.5 mm (.6”)
-\item Comprimentob 81.5 mm (3.2”)
+\item Peso 38 g (1.3 oz);
+\item Largura 50 mm (2.0”);
+\item Altura 15.5 mm (.6”);
+\item Comprimentob 81.5 mm (3.2”).
 \end{itemize}
-
 \begin{figure}[H]
 	\centering
 	  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/pix1.eps}
@@ -77,11 +76,12 @@ O módulo Pixhawk flagship pode ser utilizado visando as novas opções de perif
 
 \begin{figure}[H]
 	\centering
-	  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/pix2.eps}
+	  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/pix2.eps}
 	\caption{Entradas  de comunicação de dados  do Pixhawk. Fonte \cite{pixhawk}}
 	\label{fig:pix2}
 \end{figure}
 
+\pagebreak
 \begin{figure}[H]
 	\centering
 	  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/pix3.eps}
@@ -111,8 +111,81 @@ O módulo Pixhawk flagship pode ser utilizado visando as novas opções de perif
 \end{figure}
 
 \subsubsection{Correntes de saída da placa controladora}
+% 
+% 	Considerando os seguintes componentes ligados a placa:
+% 
+% 	\begin{itemize}
+% 
+% 		\item 01 \textit{ESC Red Brick 200A Brushless;}
+% 		
+% 		\item 08 \textit{Motores TAROT 4114 Higj Power Brushless; }
+% 		
+% 		\item 01 \textit{RadioTelemetry (3DR RADIO V2);}
+% 		
+% 		\item 01 \textit{PPM Sum Receiver;}
+% 		
+% 		\item 01 \textit{GPS and Compass kit 3DR; }
+% 		
+% 		\item 01 \textit{Buzzer;}
+% 
+% 	\end{itemize}
+% 
+% 	De acordo com o \textit{datasheet} de cada componente podemos estimar a corrente total de saída da placa controladora. Assim, sabendo que cada motor será capaz de carregar 2.15 (Kg), e determinado que chegará uma tensão de 22.2 (V) no motor, devido a bateria utilizada, o mesmo necessitará de uma corrente de 14.5 (A). \cite{helipal}.
+% 	Sabendo que o ESC utilizado será capaz de controlar e suportar os oito motores, a sua corrente deverá de ser oito vezes a corrente do motor, pois a corrente deve chegar no ESC e se dividir para os oito motores, seguindo a seguinte expressão: 
+% 
+% 	\begin{center}
+% 
+% 		$I_{esc} = 8*I_{motor}$
+% 
+% 		$I_{esc}$ = 116 (A)
+% 
+% 	\end{center}
+% 
+% 	Ao analisar o \textit{datasheet} de tal componente, sabe-se que o mesmo é capaz de suportar uma corrente de até 200 (A), sendo a corrente calculada dentro do limite estabelecido. \cite{brick}
+% 	Para o próximo componente, 3DR RADIO V2, foram obtidas as seguintes informações: 
+% 	
+% 	\indent Recebe uma corrente de 25 (mA); \cite{radio}.\\
+% 	\indent Transmite uma corrente de 100 (mA); \cite{radio}. 
+% 	
+% 	No caso, como estamos interessados nos componentes ligados a placa consideramos apenas a corrente que o rádio recebe, sendo essa de 25 (mA).
+% 	Tomando como referência o \textit{datasheet} do PPM Encoder da 3DR não foi encontrado nenhum valor de corrente referente ao funcionamento do mesmo. Assim, considera uma corrente muito pequena, não influenciando nos seguintes cálculos. \cite{enconder}.
+% 	Para o módulo \textit{GPS and COMPASS}, temos uma série de componentes em seu interior que consomem uma corrente especifica, sendo eles e suas correntes, respectivamente: 
+% 
+% 	 \begin{itemize}
+% 		\item \textit{LEA-6 Series: 22 ($\mu$A)}\cite{product};
+% 		
+% 		\item \textit{NEA-7: 10 ($\mu$A)} \cite{datasheet};
+% 		
+% 		\item \textit{Taoglas Antena: -- (não encontrada)} \cite{antena2};
+% 		
+% 		\item \textit{Maxim Amplifier: 4.1 ($\mu$A)}\cite{maximin};
+% 	\end{itemize}		
+% 	Obtendo assim uma corrente final de 14.122 (mA).
+% 
+% Por fim, temos a corrente do Buzzer, que ao analisar o seu \textit{datasheet}, encontramos que sua corrente máxima é de 30 (mA). \cite{felcodis}.
+% 	Assim, podemos estimar uma corrente total de saída da Placa Controladora somando todas as correntes dos componentes ligados a ela, sendo que deve levar em conta que o ESC estará ligado em série com os motores, considerando apenas a corrente do ESC para a soma, assim sendo: 
+% 
+% 	\begin{center}
+% 
+% 		$I_{total}$ = $I_{esc}$ + $I_{tl}$ + $I_{ppm}$ + $I_{gpsc}$ + $I_{bzz}$
+% 
+% 		$I_{total}$ =$116 (A)$ + $25 (mA)$ + 0 + $14.122 (mA)$ + $30 (mA)$
+% 
+% 		$I_{total}$ = $116.07 (A)$
+% 
+% 	\end{center}
+% 	
+% \indent $I_{esc}$: Corrente do ESC;
+% 
+% \indent $I_{tl}$: Corrente do \textit{RadioTelemetry} (3DR RADIO V2);
+% 
+% \indent $I_{ppm}$: Corrente do PPM \textit{Sum Receiver};
+% 
+% \indent $I_{gpsc}$: Corrente do \textit{GPS and Compass} kit 3DR;
+% 
+% \indent $I_{bzz}$: Corrente do \textit{Buzzer}; 
 
-
+	
 
 \subsubsection{Funcionamento do VANT}
 
@@ -120,7 +193,7 @@ Os VANT's por serem um tipo de veículo de pequeno porte e em conseqüência a m
 
 O VANT projetado,será composto por um complexo sistema integrado, apresentando cinco sub-módulos principais  que trabalham em conjunto afim de obter uma alta plataforma de observação e atuação.
 
-Sendo esses módulos, baseados em \cite{pastor}
+Sendo esses módulos, baseados em \citeonline{pastor}.
 
 \begin{itemize}
 	\item Estrutura do VANT – Uma estrutura simples, leve, aerodinamicamente eficiente e com uma plataforma estável, capaz de oferecer uma otimizização na qualidade de voo do mesmo. 
@@ -139,7 +212,9 @@ Sendo esses módulos, baseados em \cite{pastor}
 \end{figure}
 
 A arquitetura de implementação do VANT utilizará microcontroladores, assim como sensores e módulos de transmissão de dados (Figura \ref{fig:diagrama}).
-Os dados transmitidos entre o servidor na central de monitoramento, o VANT e os aplicativos (controle da missão e rastreador) seguirão um determinado padrão. Em caso de perda sinal, com a central de controle, o VANT será programado para que retorne automaticamente para a base de controle.
+Os dados transmitidos entre o servidor na central de monitoramento, o VANT e os aplicativos (controle da missão e rastreador) 
+seguirão um determinado padrão. Em caso de perda sinal, com a central de controle, o VANT será programado para que retorne 
+automaticamente para a base de controle.
 
 A Figura \ref{fig:esquemageral} mostra o esquema simplificado de montagem dos componetes do VANT.
 
@@ -156,11 +231,18 @@ A Figura \ref{fig:esquemageral} mostra o esquema simplificado de montagem dos co
 
 \subsubsection{Sistema de comunicação via rádio frequência}
 
-Os sistemas de comunicação sem fio são baseados em campos eletromagnéticos, e são ondas que transportam energia de um ponto ao outro, isso possibilita que haja comunicação sem a necessidade de uma conexão física dos fios \cite{VALLE1}. 
+Os sistemas de comunicação sem fio são baseados em campos eletromagnéticos, e são ondas que transportam energia de um ponto ao outro, 
+isso possibilita que haja comunicação sem a necessidade de uma conexão física dos fios \cite{VALLE1}. 
 
-Para que haja a propagação do sinal de radiofrequência (RF) é necessário que o sinal seja conduzido por um cabeamento condutor até uma antena que posteriormente irá irradiar através do ar os pulsos eletromagnéticos do sinal \cite{VALLE1}. 
+Para que haja a propagação do sinal de radiofrequência (RF) é necessário que o sinal seja conduzido por um cabeamento condutor até uma
+antena que posteriormente irá irradiar através do ar os pulsos eletromagnéticos do sinal \cite{VALLE1}. 
 
-A antena é um componente responsável por converter um sinal, do meio cabeado, em um sinal wireless (sem fio) e vice-versa, como é possível ver na figura 32. Os sinais irradiados no ar livre, em forma de ondas eletromagnéticas, propagam-se em linha reta e em todas as direções \cite{Rappaport2}. Com isso pode-se transmitir qualquer tipo de informação a um receptor remoto apenas utilizando a propagação dessas ondas eletromagnéticas.
+A antena é um componente responsável por converter um sinal, do meio cabeado, em um sinal \textit{wireless} (sem fio) e vice-versa, 
+como é possível
+ver na figura \ref{fig:antena}. Os sinais irradiados no ar livre, em forma de ondas eletromagnéticas, propagam-se em linha reta e em 
+todas as direções 
+\cite{Rappaport2}. Com isso pode-se transmitir qualquer tipo de informação a um receptor remoto apenas utilizando a propagação dessas ondas 
+eletromagnéticas.
 
 \begin{figure}[H]
 	\centering
@@ -182,7 +264,8 @@ A figura \ref{fig:tabelafre} mostra as bandas de radiofrequência, o nome das re
 	\label{fig:tabelafre}
 \end{figure}
 
-As ondas de radiofrequência de médias e baixas frequência (MB e ELF) possuem grandes comprimentos de onda, essa característica favorece a difração na atmosfera e garante que os obstáculos de grandes dimensões sejam contornados mais facilmente \cite{Rappaport2}.
+As ondas de radiofrequência de médias e baixas frequência (MB e ELF) possuem grandes comprimentos de onda, essa característica favorece a 
+difração na atmosfera e garante que os obstáculos de grandes dimensões sejam contornados mais facilmente \cite{Rappaport2}.
 
 Quanto maior a frequência menos é a capacidade de transmitir para distâncias muito longas ao nível da superfície terrestre \cite{VALLE1}. 
 
@@ -190,13 +273,14 @@ Quanto maior a frequência menos é a capacidade de transmitir para distâncias 
 	\item As ondas MF são as ondas utilizadas nas estações nacionais, permitindo difundir o som com maior qualidade, embora com menor alcance;
 	\item As ondas LF são utilizadas nas estações de rádio que transmitem a nível mundial;
 	\item As ondas ELF, que têm frequências extra baixas, são utilizadas quando tem-se grande obstáculos e necessita enviar uma informação. 
-	\item As Ondas HF e VHF, possuem pequenos comprimentos de ondas, geralmente sofrendo múltiplas reflexões na ionosfera e na superfície terrestre, não conseguem acompanhar a curvatura da Terra. São utilizadas em comunicações que não exigem grande alcance, mas quando é exigida a alta qualidade de som e imagem.
-	\item As Ondas UHF, SHF e EHF são utilizadas para comunicação com satélites, pois o seu comprimento de onda é muito pequeno e ele não sofre quase que refração nenhuma na atmosfera. 
+	\item As ondas HF e VHF, possuem pequenos comprimentos de ondas, geralmente sofrendo múltiplas reflexões na ionosfera e na superfície terrestre, não conseguem acompanhar a curvatura da Terra. São utilizadas em comunicações que não exigem grande alcance, mas quando é exigida a alta qualidade de som e imagem.
+	\item As ondas UHF, SHF e EHF são utilizadas para comunicação com satélites, pois o seu comprimento de onda é muito pequeno e ele não sofre quase que refração nenhuma na atmosfera. 
 \end{itemize} 
 
 \subsubsection{Agência Nacional de Telecomunicações - ANATEL}
 
-Para que seja criado um novo link utilizando radiofrequência é necessário consultar a ANATEL, pois ela é responsável por manter o controle de todas as frequências utilizadas nas telecomunicações, para garantir que não exista interferências nas transmissões.
+Para que seja criado um novo \textit{link} utilizando radiofrequência é necessário consultar a ANATEL, pois ela é responsável por 
+manter o controle de todas as frequências utilizadas nas telecomunicações, para garantir que não exista interferências nas transmissões.
 
 \begin{figure}[H]
 	\centering
@@ -206,7 +290,8 @@ Para que seja criado um novo link utilizando radiofrequência é necessário con
 \end{figure}
 
 
-Para poder ter acesso a um canal de frequência é necessário cumprir o regulamento de uso do espectro de radiofrequências. Resolução Nº 259 de 19 de abril de 2001(Em anexo ao relatório);
+Para poder ter acesso a um canal de frequência é necessário cumprir o regulamento de uso do espectro de radiofrequências. 
+Resolução Nº 259 de 19 de abril de 2001 (em anexo).
 
 \subsubsection{Especificação do projeto da comunicação do VANT}
 
@@ -219,33 +304,37 @@ Para a comunicação será utilizado dois canais.
 
 \subsubsection{A comunicação e transmissão de dados }
 
-O piloto automático guiará o VANT até a emergência. A central receberá a solicitação do veículo e com as orientações do local do acidente, ela irá mapear o percurso a ser seguido para chegar até o destino.  Essas informações referentes ao trajeto e coordenadas de GPS serão passadas de forma wireless serialmente para o sistema e controladores do VANT. Para que isso aconteça, eles estarão conectadas por um canal de comunicação de radiofrequência.
+O piloto automático guiará o VANT até a emergência. A central receberá a solicitação do veículo e com as orientações do local do 
+socorro, ela irá mapear o percurso a ser seguido para chegar até o destino.  Essas informações referentes ao trajeto e coordenadas de 
+GPS serão passadas de forma \textit{wireless} serialmente para o sistema e controladores do VANT. Para que isso aconteça, eles estarão conectadas 
+por um canal de comunicação de radiofrequência.
 
-A central necessitará passar informações ao usuário referentes ao atendimento, também precisará ver o estado do paciente e ver se os procedimentos foram realizados conforme as instruções e as informações dos sinais vitais da vítima para entender a real situação dele. Com isso a central receberá um sinal de áudio e vídeo e o VANT receberá apena o sinal de áudio da central. 
+A central necessitará passar informações ao usuário referentes ao atendimento, também precisará ver o estado do paciente e ver se os 
+procedimentos foram realizados conforme as instruções e as informações dos sinais vitais da vítima para entender a real situação dele. 
+Com isso a central receberá um sinal de áudio e vídeo e o VANT receberá apenas o sinal de áudio da central. 
 
 \subsubsection{Projeto da comunicação do VANT}
-A comunicação da central de atendimento e o VANT será através de um link de radiofrequência, será criado um canal na faixa das VLF (Very Low Frequency).
+A comunicação da central de atendimento e o VANT será através de um link de radiofrequência, será criado um canal na faixa das VLF
+\textit{(Very Low Frequency)}.
 
 \begin{itemize}
 	\item A escolha dessa faixa de operação VLF foi devido à grande facilidade de propagação desses tipos de onda;
 	\item Grande possibilidade de contorno de obstáculos de grandes dimensões;
 	\item Baixa suscetibilidade de sofrer interferências;
 	\item Propaga-se usando a atmosfera;
-	\item Menores chances de perder o link do canal;
+	\item Menores chances de perder o \textit{link} do canal;
 	\item A faixa das ELE e VLF estão disponíveis no Brasil. De 0 a 8,5 KHz temos essas duas faixas.
-	\item O Canal de comunicação do VANT será nessa faixa de 3KHz a 8,5KHz.
+	\item O canal de comunicação do VANT será nessa faixa de 3KHz a 8,5KHz.
 \end{itemize}
 
 \pagebreak
 
-\subsubsection{Custos}
+\subsubsection{Análise de Custos}
 
-\subsubsubsection{Central}
+\indent \textbf{Central}
 
 \begin{itemize}
- 
-
- \item Computador Dell Inspiron Small Desktop com processador Intel I5, Windows 8.1 e monitor: R\$ 2659,00  \footnotemark
+ \item Computador \textit{Dell Inspiron Small Desktop} com processador Intel I5, Windows 8.1 e monitor: R\$ 2659,00  \footnotemark
 \footnotetext{\url{http://www.dell.com/br/p/inspiron-3647-small-desktop/pd?oc=cai3647w8s161315brp118w1&model_id=inspiron-3647-small-desktop}}
 
   \item Roteador D-Link DIR-615: R\$ 74,00
@@ -272,12 +361,14 @@ A comunicação da central de atendimento e o VANT será através de um link de 
   \footnotetext{\url{http://www.walmart.com.br/produto/Acessorios-de-Tecnologia/Fones-de-Ouvido-e-Headsets/Dazz/423677-HEADSET-BLACK}}
 
   \item Custo total da central (2 computadores com mouse + roteador + 2 cadeiras + 2 mesas + 2 Headsets): R\$ 6109,60
-  \item Custo mensal de manutenção de serviços (internet + 6 funcionários): R\$ 6667,14
+  \item Custo mensal de manutenção de serviços (internet + 6 funcionários): R\$ 6667,14 
+
+
 
 \end{itemize}
 
 
-\subsubsubsection{Controlador}
+\indent \textbf{Controlador}
 
 \begin{itemize}
   \item Valor do controlador, convertido para reais em 17 de junho de 2015: R\$ 611,97 

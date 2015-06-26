@@ -75,7 +75,7 @@ O motor escolhido é o motor Tarot 4114 \textit{High Power Brushless} (sem escov
 \end{figure}
 \vfill
 Este motor é comumente utilizado em  multirotores, um exemplo o modelo US 1000 de filmagens. Ele possui capacidade de gerar um empuxo de até
-2.5 kg e uma outra característica desse tipo de motor é a magnetização do rotor ser por imãs permanentes. Motores de corrente contínua 
+2.5 kg em uma condição de segurança. Uma outra característica desse tipo de motor é a magnetização do rotor ser por imãs permanentes. Motores de corrente contínua 
 possuem vários benefícios em relação aos motores com escova, dentre algumas estão: melhor característica velocidade x torque, maiores
 eficiência, vida útil, taxa de velocidade e é mais silencioso \cite{nascimento}.
 
@@ -159,7 +159,9 @@ A tenacidade é definida como sendo a habilidade de um material absorver energia
     \label{fig:graficoRelacao}
 \end{figure}
 
-Os materiais escolhidos, fibra de vidro e carbono, são determinados como materiais compósitos. As características destes incluem em pegar as melhores carcteristicas de variados materiais e junta-las para que se tenha um melhor desempenho no geral. 
+Os materiais escolhidos, fibra de vidro e carbono, são determinados como materiais compósitos.
+As características destes incluem em pegar as melhores características de variados materiais e juntá-las para que se tenha um 
+melhor desempenho no geral. 
 
 Portanto, a escolha dos materiais do drone pode ser explicada de acordo com a tabela acima e com as explicações teóricas do que cada característica representa. 
 
@@ -176,16 +178,17 @@ Para inicio da construção do VANT, consideramos as medidas de um DEA (Desfibri
 \begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.2]{figuras/heart.eps}
-    \caption{ HeartSine samaritan PAD SAM 300P. Fonte: \cite{aedsingapore}}
+    \caption{ \textit{HeartSine samaritan} PAD SAM 300P. Fonte: \cite{aedsingapore}}
     \label{fig:heart}
 \end{figure}
 
-O frame central projetado será baseado no frame central do S1000, porém adaptado ao desfibrilador e ao reanimador ventilatório, como é possível ver na figura 19: 
+O frame central projetado será baseado no frame central do S1000, porém adaptado ao desfibrilador e ao reanimador ventilatório, como é possível 
+ver na figura \ref{fig:framecentral}: 
 
 \begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/framecentral.eps}
-    \caption{ Frame central S1000. Fonte: \cite{heliguy}}
+    \caption{ \textit{Frame} central S1000. Fonte: \cite{heliguy}}
     \label{fig:framecentral}
 \end{figure}
 
@@ -195,7 +198,7 @@ Como as medidas, seguindo o manual, do frame central do S1000 é 337.5mm da pont
 \begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/drawing.eps}
-    \caption{ Drawing Frame Central Superior}
+    \caption{ \textit{Drawing Frame} Central Superior}
     \label{fig:drawing}
 \end{figure}
 
@@ -226,7 +229,7 @@ Por meio da plataforma CATIA, foi possível idealizar o projeto EmerVANT, em esc
     \label{fig:keyshot1}
 \end{figure}
 
-O retângulo vermelho, presente na parte superior da estrutura do VANT, mostrado na figura 21, é a gaveta para retirada dos eletrodos do Desfibrilador Externo Automático, o local onde os eletrodos ficam guardados será passado para o usuário através do procedimento de instruções para a utilização do EmerVant. A central ficará responsável por dar todas as informações necessárias para a utilização do equipamento e atendimento.
+O retângulo vermelho, presente na parte superior da estrutura do VANT, mostrado na figura \ref{fig:keyshot2}, é a gaveta para retirada dos eletrodos do Desfibrilador Externo Automático, o local onde os eletrodos ficam guardados será passado para o usuário através do procedimento de instruções para a utilização do EmerVant. A central ficará responsável por dar todas as informações necessárias para a utilização do equipamento e atendimento.
 
 \begin{figure}[H]
     \centering
@@ -235,9 +238,161 @@ O retângulo vermelho, presente na parte superior da estrutura do VANT, mostrado
     \label{fig:keyshot2}
 \end{figure}
 
+\subsubsection{Cálculo de Tensão no Braço do VANT}
+
+O cálculo do valor da tensão máxima aplicada a cada braço reflete o limite da proporcionalidade
+do material, coincidindo com o ponto de escoamento, sendo este ponto a relação entre a 
+deformação elástica e plástica do material. 
+
+\begin{figure}[H]
+    \centering
+      \includegraphics[keepaspectratio=true,scale=0.5]{figuras/corpo_livre.png}
+    \caption{Diagrama de corpo livre braço do EmerVANT}
+    \label{fig:diagrama_corpo}
+\end{figure}
+
+O comportamento elástico do material é definido quando as deformações ocasionadas por um 
+carregamento desaparece com sua retirada. Quanto ao comportamento plástico o efeito do 
+comportamento deixa deformações permanentes. Para finalidade da resolução desses cálculos, 
+utilizam-se as seguintes fórmulas:
+
+\indent \textbf{Dados}:\\
+   \indent E = 230 GPa;\\
+   \indent $d_i$ = 28mm;\\
+   \indent $d_e$ = 30mm;\\
+   \indent Peso = 0,148 Kg;\\
+   \indent Comprimento L = 0,384m;\\
+\indent \textbf{Fórmulas:}
+      \begin{equation}
+	F_e = m * g
+	\label{eq:11}
+      \end{equation}
+      \indent onde $m$ é a massa e $g$ é a aceleração da gravidade;\\
+   \indent Utiliza-se para calcular o momento de inércia a fórmula:\\
+      \begin{equation}
+	I= \frac{\pi}{64}( {d_e}^4 - {d_i}^4)
+	\label{eq:12}
+    \end{equation}
+      \begin{equation}
+	 \sigma = \frac{M*c}{I}
+	\label{eq:13}
+      \end{equation}
+    \indent sendo M o momento fletor, c o raio da peça e I o momento da Inércia.\\
+    \indent Fator de segurança:
+    \begin{equation}
+     FS= \frac{\sigma ruptura}{\sigma admissível}
+     \label{eq:14}
+    \end{equation}
+
+Obtêm-se a área da seção transversal:
+
+\begin{equation}
+ A= \frac{\pi}{4} {d} ^ {2}
+\end{equation}
+
+\begin{center}
+ $ A= \frac{\pi}{4} ({0,030}) ^ {2} -  \frac{\pi}{4} ({0,028}) ^ {2}$
+ $ A = 91,11 * {10} ^ {-6}   {m} ^ {2}$
+\end{center}
+Encontrando a força peso do motor:
+
+\begin{equation}
+ F_p = m * g 
+\end{equation}
+
+\begin{center}
+  $F_p = 0,148 * 9,8 (kg \frac{m}{s^2}) = 1,45N$
+ 
+\end{center}
+
+A força de empuxo é obtida considerando que o motor tem capacidade de carga máxima de 2,5 kg,
+podemos estimar que a força de empuxo é dada pela equação \ref{eq:11}.
+Substituindo em \ref{eq:11}: 
+
+\begin{equation}
+ F_e =2,5 * 9,8=24,5 N
+\end{equation}
+
+Pelo equilíbrio de forças temos que:
+
+\begin{equation}
+ \sum {F_y} = 0
+\end{equation}
+
+\begin{center}
+ $24,5 - 1,45 - F = 0$\\
+ $F = 23,05N$
+\end{center}
+
+Cálculo do Momento Fletor:
+
+  \begin{equation}
+    M = F*d
+  \end{equation}
+  
+  \begin{center}
+   $M = 23,05 * 0,384$ \\
+   $M = 8,85 N*m$
+  \end{center}
+
+Cálculo do Momento de Inércia, substituindo a equação \ref{eq:12} nos dados:
+
+\begin{equation}
+ A= \frac{\pi}{4}({0,030}) ^ {4} -  \frac{\pi}{4}({0,028}) ^ {4}
+\end{equation}
+% 
+ \begin{center}
+ $ A = 9,6 * {10} ^ {-9}   {m} ^ {4}$
+\end{center}
+
+A partir de então pode-se aplicar os valores a equação \ref{eq:13} e descobrir a tensão máxima:
+
+\begin{equation}
+ \sigma = \frac{8,85*0,015}{9,6 *{10} ^ {-9}}
+\end{equation}
+
+\begin{center}
+ $\sigma = 14,75 MPa$
+\end{center}
+
+Como o módulo da fibra de carbono (E) é de 230 GPa, sabe-se que:
+
+\begin{equation}
+  \sigma << E 
+\end{equation}
+
+\begin{center}
+ $14,75 MPa << 230 GPa$
+\end{center}
+
+Atribuindo um fator de segurança (equação \ref{eq:14}) de 3,5, a fim de encontrar a
+$\sigma admissível$, sabendo que a $\sigma ruptura$ é igual a 740 MPa, tem-se:
+
+\begin{equation}
+ 3,5= \frac{740.000.000}{\sigma admissível}
+\end{equation}
+
+\begin{center}
+ $\sigma admissível = 211,43 MPa$
+\end{center}
+
+Como a tensão nominal é menor que a tensão admissível, o braço do VANT suporta as forças exigidas, não havendo deformação plástica no material o que afetaria seu tempo útil de execução.
+\begin{center}
+$14,75 MPa <<  211,43 MPa$
+\end{center}
+
+Na figura \ref{fig:simulacao} pode ser vista a simulação feita no ANSYS para a tensão no braço do VANT.
+
+\begin{figure}[H]
+    \centering
+      \includegraphics[keepaspectratio=true,scale=0.4]{figuras/simulacao_ansys.png}
+    \caption{Simulação de Tensão no Braço. Fonte: ANSYS}
+    \label{fig:simulacao}
+\end{figure}
+
 \subsubsection{Análise de custos}
 
-\indent \textbf{Frame central e trem de pouso}
+\indent \textbf{\textit{Frame} central e trem de pouso}
 
 Como definimos projetar alguns acessórios do VANT, como frame central, trem de pouso e a carcaça, foram levantados alguns estudos sobre como será projetado. O frame central e o trem de pouso, ambos serão projetados com fibra de carbono, pois se tratam de estruturas com características mais rígidas e resistentes para que possa suportar as tensões calculadas.
 
@@ -247,30 +402,47 @@ Todos os cálculos feitos a seguir são aproximações de comprimento dos compon
 
 \begin{figure}[H]
     \centering
+      \includegraphics[keepaspectratio=true,scale=0.2]{figuras/fibra_carbono.png}
+    \caption{Fibra de carbono de pano liso. Fonte: Carbon Fiber Australia\protect\footnotemark}
+    \label{fig:frame_central}
+\end{figure}
+
+\footnotetext{http://www.carbonfiber.com.au/prod52.htm}
+
+O preço do metro quadrado encontrado no site Carbon Fiber Australia para esta fibra de carbono 
+de pano liso está AUD\$55.795  (dólar Australiano) conforme a cotação do dólar australiano do dia
+24/06/2015 as 16:48, está R\$2,39, o metro quadrado passa a ser R\$133,35.
+Todos os cálculos feitos a seguir são aproximações de comprimento dos componentes acima listados
+com uma margem de erro de 10\% para mais.
+
+\begin{figure}[H]
+    \centering
       \includegraphics[keepaspectratio=true,scale=0.5]{figuras/frame_central.png}
     \caption{Trem de pouso CATIA}
     \label{fig:frame_central}
 \end{figure}
 
 Os tubos de fibra de carbono, que compõe o trem de pouso apresentado na figura \ref{fig:frame_central},
-com 21 mm de diâmetro externo, 2 mm de espessura e 1m de comprimento custarão em torno de
-R\$140 e R\$160 cada. O numero de tubos necessários para a construção do VANT serão de 8 devido
-as varrições de comprimento de cada seção. Estas seções podem variar entre um comprimento de
-251mm e 388mm.
+com 21 mm de diâmetro externo, 2 mm de espessura e 1m de comprimento, a área de um tubo terá 0,84$m^2$, 
+um tubo custará R\$112,014. O número de tubos
+necessários para a construção do VANT serão de 8 devido as varrições de comprimento de cada 
+seção.  Estas seções podem variar entre um comprimento de 251mm e 388mm.
 
-De acordo com o preço de cada tubo, o preço total será de R\$1280. A junção destes será feita
-por técnico mecânico industrial com valor de serviço de R\$20 (Guia do Estudante)\footnotemark a hora.
+De acordo com o preço de cada tubo, o preço total será de R\$896,12. A junção destes será feita
+por técnico mecânico industrial com valor de serviço de R\$20 (Guia do Estudante)\footnotemark 
+a hora.
 
 \footnotetext{http://guiadoestudante.abril.com.br/profissoes/engenharia-producao/automacao-industrial-684507.shtml}
 
-Este técnico também elaborará a produção do Frame Central de acordo com os detalhes
-especificados. Devido a esta peculiaridade a produção desta demorará em torno de 6 horas e as
-junções das conexões das seções restantes terá tempo estimado de 16 horas, totalizando um total de
-22h horas.
+Este técnico também elaborará a produção do \textit{Frame} Central de acordo com os detalhes especificados.
+A área de um frame central é de 0,33$m^2$. Utilizando o mesmo pano liso de fibra de carbono, 
+o preço de um frame central será de R\$44,01.  Devido a esta peculiaridade a produção desta
+demorará em torno de 6 horas e as junções das conexões das seções restantes terá tempo estimado
+de 16 horas,  resultando um tempo mínimo de 22 horas.
 
 Portanto, o valor de número de horas a ser pagas a este técnico terá custo de no minimo
-R\$440,00. Somando o preço total a ser pago para o número de tubos e horas trabalhadas, o valor total
-a ser empregado nesta parte do projeto será de R\$1765,00.
+R\$440,00. Somando o preço total a ser pago para o número de tubos e horas trabalhadas,
+o valor total a ser empregado nesta parte do projeto será de R\$1765,00.
 
 \begin{table*}[!h]
 \centering
@@ -279,9 +451,9 @@ a ser empregado nesta parte do projeto será de R\$1765,00.
 \hline
 
 Peça & Preço& Quantidade& Horas Trabalhadas &HT x Hora técnico& Total\\ \hline
-Frame Central &R\$ 22,50& 2 &3h x 2 = 6h& 6h x R\$20 = R\$120,00& R\$165,00 \\ \hline
-Tubos (trem de Pouso)& R\$160,00& 8 &2h x 8 = 16h &16h x R\$20 = R\$320,00& R\$1600,00\\ \hline
-\textbf{Total} & & & & & \textbf{R\$1765,00}\\ \hline
+Frame Central &R\$ 44,01& 2 &3h x 2 = 6h& 6h x R\$20 = R\$120,00& R\$208,01 \\ \hline
+Tubos (trem de Pouso)& R\$112,04& 8 &2h x 8 = 16h &16h x R\$20 = R\$320,00& R\$1216,12\\ \hline
+\textbf{Total} & & & & 22h & \textbf{R\$1424,13}\\ \hline
 
 \end{tabular}
     \label{custos_carregador}
@@ -298,7 +470,7 @@ com o polímero ABS como material.
 \begin{figure}[H]
     \centering
       \includegraphics[keepaspectratio=true,scale=0.25]{figuras/impressao3D.jpg}
-    \caption{Funcionamento de uma impressora 3D. Fonte: Fireprint}
+    \caption{Funcionamento de uma impressora 3D. Fonte: Fireprint\protect\footnotemark}
     \label{fig:impressao3D}
 \end{figure}
 
@@ -307,7 +479,7 @@ De acordo com o site da \textit{MakerBot}\footnotemark, as peças de filamento d
 
 O tempo para projetar a carcaça é de no mínimo 3 horas e o custo de um projetista atualmente no mercado é de aproximadamente R\$17,00 a hora resultando assim o custo de projeto em R\$51,00.
 
-Foi feito um orçamento na empresa Grupo Alutech para fazer a confecção da carcaça do EmerVant usando polímero ABS na cor amarela custa no total com o frete R\$2145,00.
+Foi feito um orçamento na empresa Grupo \textit{Alutech} para fazer a confecção da carcaça do EmerVant usando polímero ABS na cor amarela custa no total com o frete R\$2145,00.
 
 O custo total da carcaça do EmerVant somando projeto e material é R\$ 460,18. Se for contratada uma empresa para fazer o serviço, então o custo seria somente o de projeto e o da empresa, resultando em R\$2196,00.
 
@@ -331,28 +503,6 @@ conjunto motor, hélice e braço.
 Conforme o verificado no site \textit{Dronestore}, o valor de um conjunto como acima, custa
 R\$1654,00. Como são 8 braços, o valor total será de R\$13.232,00.
 
-\indent \textbf{Desfibrilador e Reanimador Manual}
-
-No caso do Desfibrilador Externo Automático (DEA), não será necessário fabricar um
-para o projeto. Apenas será feito a compra de um DEA chamado \textit{HeartSine samaritan PAD
-SAM 300P}. Conforme feito pesquisas para saber quanto custa, no site \textit{First Aid Product}\footnotemark, está
-no preço de U\$1.600,00. Usando a cotação do dólar do dia 18/06/2015 as 17:24 de
-US\$3,0588, o valor sai em R\$4.594,00.
-\footnotetext{http://www.first-aid-product.com/}
-
-No caso do Reanimador Manual, são 3 tipos de reanimador: Neonatal, Reanimador Infantil e Reanimador Adulto a partir dos 13 anos. R\$140,00 - cada unidade\footnotemark. 
-Será realizado a compra do conjunto de Reanimadores da marca PROTEC\footnotemark.
-
-\footnotetext{http://www.medicalfast.com.br/}
-\begin{figure}[H]
-    \centering
-      \includegraphics[keepaspectratio=true,scale=0.4]{figuras/reanimadores.png}
-    \caption{Tipos de Reanimadores Manuais. Fonte: PROTEC}
-\end{figure}
-
-\footnotetext{http://www.protec.com.br/}
-No Total, o conjunto de reanimadores custará R\$420,00.
-
 \indent \textbf{Total}
 
 \begin{table*}[!h]
@@ -362,13 +512,14 @@ No Total, o conjunto de reanimadores custará R\$420,00.
 \hline
 
 Peça &Quantidade& Preço\\ \hline
-Tubos (Trem de pouso)&8 &R\$1600,00\\ \hline
+Tubos (Trem de pouso)&8 &R\$1424,13\\ \hline
 Frame Central &2 &R\$165,00\\ \hline
 Braço, hélice e motor &8 &R\$13.232,00\\ \hline
 Desfibrilador &1 &R\$4.594,00\\ \hline
 Reanimador &3 &R\$420,00\\ \hline
-Total& &R\$20.011,00\\ \hline
+Total& &R\$14.821,13\\ \hline
 \end{tabular}
 \end{table*}
 
-O conjunto estrutural do EmerVANT terá um valor minimo de R\$20.011,00, desconsiderando a parte controladora do VANT.
+O conjunto estrutural do EmerVANT terá um valor mínimo de R\$14.821,13, desconsiderando a
+parte controladora do VANT e os equipamentos a serem carregados.

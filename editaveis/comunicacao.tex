@@ -126,13 +126,13 @@ O grau de urgência é diretamente proporcional à gravidade, à quantidade de r
 
 \begin{description}
   \item[Gravidade] \hfill \\
-  É perfeitamente possível quantiﬁcar a gravidade do caso pelo telefone, por meio de perguntas objetivas dirigidas diretamente ao paciente ou à pessoa que ligou solicitando ajuda, utilizando uma semiologia que é deﬁnida e abordada nos protocolos especíﬁcos.
+  É perfeitamente possível quantificar a gravidade do caso pelo telefone, por meio de perguntas objetivas dirigidas diretamente ao paciente ou à pessoa que ligou solicitando ajuda, utilizando uma semiologia que é definida e abordada nos protocolos específicos.
  \item[Tempo] \hfill \\
  Tratamos aqui de utilizar o conhecimento dos intervalos de tempo aceitáveis entre o início dos sintomas e o início do tratamento. Quanto menor o tempo exigido, maior a urgência.
  \item[Recursos necessários] \hfill \\
  Quanto maior for a necessidade de recursos envolvidos no atendimento inicial e no tratamento definitivo, maior será a urgência. Este subfator é o que mais influi na decisão de transferir o paciente.
   \item[Valor Social] \hfill \\
- A pressão social que envolve o atendimento inicial pode muitas vezes justiﬁcar o aumento do grau de urgência de um caso simples. Este fator não pode ser negligenciado, pois muitas vezes uma comoção social no local do atendimento pode diﬁcultar a prestação de socorro.
+ A pressão social que envolve o atendimento inicial pode muitas vezes justificar o aumento do grau de urgência de um caso simples. Este fator não pode ser negligenciado, pois muitas vezes uma comoção social no local do atendimento pode dificultar a prestação de socorro.
 \end{description}
 
 \subsubsubsection{Classificação das urgências}
@@ -159,3 +159,64 @@ Já no caso de parada respiratória, as instruções para utilização de Respir
 
 A central pode solicitar, via áudio, que o terceiro que auxiliou no atendimento aguarde no local até a chegada da viatura a fim de prevenir outros casos.
 
+\subsubsection{Custos}
+  
+  Para a parte de comunicação o custo calculado trata-se das modificações a serem realizadas no
+  \textit{Mission Planner}, essas modificações podem ser vistas no documento de visão que está
+  em anexo.
+  
+  Dadas as modificações necessárias, para a realização das mesmas, foi definido um planejamento, usando o \textit{Scrum} que
+  é uma metodologia ágil e que traz conceitos temporais que serão utilizados nas modificações do \textit{Mission Planner}. 
+  
+  Dentre os conceitos provenientes de \citeonline{scrum} que serão utilizados no projeto temos as seguintes definições:
+
+  \begin{itemize}
+  \item \textit{Release} – Entrega das manutenções planejadas. No projeto de manutenção do \textit{Mission Planner} será após um mês do começo das modificações;
+  \item \textit{Sprint} – Ciclo menor de tempo. No projeto de manutenção do \textit{Mission Planner}, possuirá duas semanas de duração.
+  \end{itemize}
+
+  \textbf{Planejamento}
+   \begin{itemize}
+      \item 1ª \textit{Sprint}
+	\subitem Retirar função de doar para o projeto;
+	\subitem Traduzir menus, instruções e comandos;
+	\subitem Criar funcionalidades de \textit{login}.	
+      \item 2ª \textit{Sprint}
+      \subitem Criar funcionalidade de receber dados do paciente.
+      \subitem Adicionar funcionalidade de observação por câmera e comunicação;
+      \subitem Definir perfis de acesso e configuração.
+  \end{itemize}
+
+ \textbf{Cálculo dos custos}
+ 
+ Para definir os custos, foi definido que cada atividade deverá passar por quatro áreas: 
+\begin{itemize}
+ \item Requisitos;
+\item Desenvolvimento;
+\item Teste;
+\item Implantação.
+\end{itemize}
+
+   Foi definido que a fábrica que realizará a manutenção possuirá três funcionários para cada uma das áreas descritas. 
+   Foram definidos os seguintes salários (por hora), baseado no site Info Abril\footnotemark para os funcionários dessas áreas:
+\footnotetext{http://info.abril.com.br/carreira/salarios/}
+\begin{itemize}
+   \item Analista de Requisitos – R\$ 91,50
+\item Desenvolvedor – R\$ 53,20
+\item Analista de Teste –R\$ 58,80
+\item Infraestrutura – R\$ 63,00
+\end{itemize}
+
+Sendo assim, tendo em mente que serão duas \textit{sprints} de duas semanas cada, 
+e que por dia cada funcionário trabalha 8 horas, temos como custo final o valor de R\$ 63960,00,
+conforme detalhamento na figura \ref{fig:custos_software}.
+ 
+ \begin{figure}[H]
+    \centering
+	    \includegraphics[keepaspectratio=true,scale=0.8]{figuras/custos_software.png}
+    \caption{Custos de modificações no \texttt{Mission Planner}}
+    \label{fig:custos_software}
+\end{figure}
+
+Algo que também deve ser levado em conta é que pode vir a existir a necessidade de manutenção, seja esta corretiva ou evolutiva, 
+sendo assim deve ser levado em conta um possível gasto extra além do estabelecido.

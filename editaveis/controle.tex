@@ -111,79 +111,83 @@ O módulo Pixhawk flagship pode ser utilizado visando as novas opções de perif
 \end{figure}
 
 \subsubsection{Correntes de saída da placa controladora}
-% 
-% 	Considerando os seguintes componentes ligados a placa:
-% 
-% 	\begin{itemize}
-% 
-% 		\item 01 \textit{ESC Red Brick 200A Brushless;}
-% 		
-% 		\item 08 \textit{Motores TAROT 4114 Higj Power Brushless; }
-% 		
-% 		\item 01 \textit{RadioTelemetry (3DR RADIO V2);}
-% 		
-% 		\item 01 \textit{PPM Sum Receiver;}
-% 		
-% 		\item 01 \textit{GPS and Compass kit 3DR; }
-% 		
-% 		\item 01 \textit{Buzzer;}
-% 
-% 	\end{itemize}
-% 
-% 	De acordo com o \textit{datasheet} de cada componente podemos estimar a corrente total de saída da placa controladora. Assim, sabendo que cada motor será capaz de carregar 2.15 (Kg), e determinado que chegará uma tensão de 22.2 (V) no motor, devido a bateria utilizada, o mesmo necessitará de uma corrente de 14.5 (A). \cite{helipal}.
-% 	Sabendo que o ESC utilizado será capaz de controlar e suportar os oito motores, a sua corrente deverá de ser oito vezes a corrente do motor, pois a corrente deve chegar no ESC e se dividir para os oito motores, seguindo a seguinte expressão: 
-% 
-% 	\begin{center}
-% 
-% 		$I_{esc} = 8*I_{motor}$
-% 
-% 		$I_{esc}$ = 116 (A)
-% 
-% 	\end{center}
-% 
-% 	Ao analisar o \textit{datasheet} de tal componente, sabe-se que o mesmo é capaz de suportar uma corrente de até 200 (A), sendo a corrente calculada dentro do limite estabelecido. \cite{brick}
-% 	Para o próximo componente, 3DR RADIO V2, foram obtidas as seguintes informações: 
-% 	
-% 	\indent Recebe uma corrente de 25 (mA); \cite{radio}.\\
-% 	\indent Transmite uma corrente de 100 (mA); \cite{radio}. 
-% 	
-% 	No caso, como estamos interessados nos componentes ligados a placa consideramos apenas a corrente que o rádio recebe, sendo essa de 25 (mA).
-% 	Tomando como referência o \textit{datasheet} do PPM Encoder da 3DR não foi encontrado nenhum valor de corrente referente ao funcionamento do mesmo. Assim, considera uma corrente muito pequena, não influenciando nos seguintes cálculos. \cite{enconder}.
-% 	Para o módulo \textit{GPS and COMPASS}, temos uma série de componentes em seu interior que consomem uma corrente especifica, sendo eles e suas correntes, respectivamente: 
-% 
-% 	 \begin{itemize}
-% 		\item \textit{LEA-6 Series: 22 ($\mu$A)}\cite{product};
-% 		
-% 		\item \textit{NEA-7: 10 ($\mu$A)} \cite{datasheet};
-% 		
-% 		\item \textit{Taoglas Antena: -- (não encontrada)} \cite{antena2};
-% 		
-% 		\item \textit{Maxim Amplifier: 4.1 ($\mu$A)}\cite{maximin};
-% 	\end{itemize}		
-% 	Obtendo assim uma corrente final de 14.122 (mA).
-% 
-% Por fim, temos a corrente do Buzzer, que ao analisar o seu \textit{datasheet}, encontramos que sua corrente máxima é de 30 (mA). \cite{felcodis}.
-% 	Assim, podemos estimar uma corrente total de saída da Placa Controladora somando todas as correntes dos componentes ligados a ela, sendo que deve levar em conta que o ESC estará ligado em série com os motores, considerando apenas a corrente do ESC para a soma, assim sendo: 
-% 
-% 	\begin{center}
-% 
-% 		$I_{total}$ = $I_{esc}$ + $I_{tl}$ + $I_{ppm}$ + $I_{gpsc}$ + $I_{bzz}$
-% 
-% 		$I_{total}$ =$116 (A)$ + $25 (mA)$ + 0 + $14.122 (mA)$ + $30 (mA)$
-% 
-% 		$I_{total}$ = $116.07 (A)$
-% 
-% 	\end{center}
-% 	
-% \indent $I_{esc}$: Corrente do ESC;
-% 
-% \indent $I_{tl}$: Corrente do \textit{RadioTelemetry} (3DR RADIO V2);
-% 
-% \indent $I_{ppm}$: Corrente do PPM \textit{Sum Receiver};
-% 
-% \indent $I_{gpsc}$: Corrente do \textit{GPS and Compass} kit 3DR;
-% 
-% \indent $I_{bzz}$: Corrente do \textit{Buzzer}; 
+
+	Considerando os seguintes componentes ligados a placa:
+
+	\begin{itemize}
+
+		\item 01 \textit{ESC Red Brick 200A Brushless;}
+		
+		\item 08 \textit{Motores TAROT 4114 Higj Power Brushless; }
+		
+		\item 01 \textit{RadioTelemetry (3DR RADIO V2);}
+		
+		\item 01 \textit{PPM Sum Receiver;}
+		
+		\item 01 \textit{GPS and Compass kit 3DR; }
+		
+		\item 01 \textit{Buzzer;}
+
+	\end{itemize}
+
+	De acordo com o \textit{datasheet} de cada componente podemos estimar a corrente total de saída da placa controladora. 
+	Assim, sabendo que cada motor será capaz de carregar 2.15 (Kg), e determinado que chegará uma tensão de 22.2 (V) no motor, 
+	devido a bateria utilizada, o mesmo necessitará de uma corrente de 14.5 (A). \cite{helipal}.
+	Sabendo que o ESC utilizado será capaz de controlar e suportar os oito motores, a sua corrente deverá de ser oito vezes a 
+	corrente do motor, pois a corrente deve chegar no ESC e se dividir para os oito motores, seguindo a seguinte expressão: 
+
+	\begin{center}
+ 
+	$I_{esc} = 8*I_{motor}$
+	$I_{esc}$ = 116 (A)
+	
+	\end{center}
+
+	Ao analisar o \textit{datasheet} de tal componente, sabe-se que o mesmo é capaz de suportar uma corrente de até 200 (A), 
+	sendo a corrente calculada dentro do limite estabelecido.\footnotemark
+	Para o próximo componente, 3DR RADIO V2, foram obtidas as seguintes informações: 
+	
+	\footnotetext{http://www.shuziguangxi.com/pt/Red-Brick-200A-ESC-Brushless-ESC-OPTO-NO-BEC-200A\%28OPTO\%29-p-77974.html}
+	\indent Recebe uma corrente de 25 (mA); \cite{radio}.\\
+	\indent Transmite uma corrente de 100 (mA); \cite{radio}. 
+	
+	No caso, como estamos interessados nos componentes ligados a placa consideramos apenas a corrente que o rádio recebe, sendo essa de 25 (mA).
+	Tomando como referência o \textit{datasheet} do PPM Encoder da 3DR não foi encontrado nenhum valor de corrente referente ao funcionamento do mesmo. Assim, considera uma corrente muito pequena, não influenciando nos seguintes cálculos. \cite{enconder}.
+	Para o módulo \textit{GPS and COMPASS}, temos uma série de componentes em seu interior que consomem uma corrente especifica, sendo eles e suas correntes, respectivamente: 
+
+	 \begin{itemize}
+		\item \textit{LEA-6 Series: 22 ($\mu$A)}\cite{product};
+		
+		\item \textit{NEA-7: 10 ($\mu$A)} \cite{datasheet};
+		
+		\item \textit{Taoglas Antena: -- (não encontrada)} \cite{antena2};
+		
+		\item \textit{Maxim Amplifier: 4.1 ($\mu$A)}\cite{maximin};
+	\end{itemize}		
+	Obtendo assim uma corrente final de 14.122 (mA).
+
+Por fim, temos a corrente do Buzzer, que ao analisar o seu \textit{datasheet}, encontramos que sua corrente máxima é de 30 (mA). \cite{felcodis}.
+	Assim, podemos estimar uma corrente total de saída da Placa Controladora somando todas as correntes dos componentes ligados a ela, sendo que deve levar em conta que o ESC estará ligado em série com os motores, considerando apenas a corrente do ESC para a soma, assim sendo: 
+
+	\begin{center}
+
+		$I_{total}$ = $I_{esc}$ + $I_{tl}$ + $I_{ppm}$ + $I_{gpsc}$ + $I_{bzz}$
+
+		$I_{total}$ =$116 (A)$ + $25 (mA)$ + 0 + $14.122 (mA)$ + $30 (mA)$
+
+		$I_{total}$ = $116.07 (A)$
+
+	\end{center}
+	
+\indent $I_{esc}$: Corrente do ESC;
+
+\indent $I_{tl}$: Corrente do \textit{RadioTelemetry} (3DR RADIO V2);
+
+\indent $I_{ppm}$: Corrente do PPM \textit{Sum Receiver};
+
+\indent $I_{gpsc}$: Corrente do \textit{GPS and Compass} kit 3DR;
+
+\indent $I_{bzz}$: Corrente do \textit{Buzzer}; 
 
 	
 
@@ -231,7 +235,8 @@ A Figura \ref{fig:esquemageral} mostra o esquema simplificado de montagem dos co
 
 \subsubsection{Sistema de comunicação via rádio frequência}
 
-Os sistemas de comunicação sem fio são baseados em campos eletromagnéticos, e são ondas que transportam energia de um ponto ao outro, 
+Os sistemas de comunicação sem fio são baseados em campos eletromagnéticos
+, e são ondas que transportam energia de um ponto ao outro, 
 isso possibilita que haja comunicação sem a necessidade de uma conexão física dos fios \cite{VALLE1}. 
 
 Para que haja a propagação do sinal de radiofrequência (RF) é necessário que o sinal seja conduzido por um cabeamento condutor até uma
@@ -305,29 +310,76 @@ Para a comunicação será utilizado dois canais.
 \subsubsection{A comunicação e transmissão de dados }
 
 O piloto automático guiará o VANT até a emergência. A central receberá a solicitação do veículo e com as orientações do local do 
-socorro, ela irá mapear o percurso a ser seguido para chegar até o destino.  Essas informações referentes ao trajeto e coordenadas de 
+socorro, ela irá mapear o percurso a ser seguido para chegar até o destino e enviará as informações.  
+Essas informações referentes ao trajeto e coordenadas de 
 GPS serão passadas de forma \textit{wireless} serialmente para o sistema e controladores do VANT. Para que isso aconteça, eles estarão conectadas 
-por um canal de comunicação de radiofrequência.
+por um canal de comunicação de radiofrequência, no caso já existente do corpo de bombeiros.
 
 A central necessitará passar informações ao usuário referentes ao atendimento, também precisará ver o estado do paciente e ver se os 
 procedimentos foram realizados conforme as instruções e as informações dos sinais vitais da vítima para entender a real situação dele. 
-Com isso a central receberá um sinal de áudio e vídeo e o VANT receberá apenas o sinal de áudio da central. 
+Com isso a central receberá um sinal de áudio e vídeo e o VANT receberá apenas o sinal de áudio da central, por onde o operador poderá
+fazer as orientações necessárias.
 
 \subsubsection{Projeto da comunicação do VANT}
-A comunicação da central de atendimento e o VANT será através de um link de radiofrequência, será criado um canal na faixa das VLF
+A comunicação da central de atendimento e o VANT será através de um \textit{link} de radiofrequência, será criado um canal na faixa das VLF
 \textit{(Very Low Frequency)}.
 
 \begin{itemize}
-	\item A escolha dessa faixa de operação VLF foi devido à grande facilidade de propagação desses tipos de onda;
-	\item Grande possibilidade de contorno de obstáculos de grandes dimensões;
-	\item Baixa suscetibilidade de sofrer interferências;
-	\item Propaga-se usando a atmosfera;
-	\item Menores chances de perder o \textit{link} do canal;
-	\item A faixa das ELE e VLF estão disponíveis no Brasil. De 0 a 8,5 KHz temos essas duas faixas.
-	\item O canal de comunicação do VANT será nessa faixa de 3KHz a 8,5KHz.
+	\item  A escolha dessa faixa de operação VHF foi devido à grande taxa de transferência;
+	\item Qualidade das informações a serem transmitidas;
+	\item Não se propaga por longas distâncias;
+	\item A faixa das VHF são de 30MHz a 300 MHz;
+	\item  O Canal de comunicação do VANT será nessa faixa de 39,020MHz que é a faixa utilizada pelo CBMDF.
 \end{itemize}
 
-\pagebreak
+\subsubsubsection{Áudio e Vídeo}
+
+A qualidade de vídeo de 720p assume formato widescreen 16:9 e uma resolução vertical de 1280 pixels de um total de 0,92 milhão de pixels. 
+A taxa de quadros utilizada será de 60fps (\textit{frames} por segundo). 
+
+A câmera possibilitará a captura de vídeos e de áudio, para que seja transmitida pelo canal de rádio frequência. O vídeo será transmitido em 
+720p e será utilizando o padrão de compressão de vídeo H.264.
+
+\begin{center}
+ $720p a 60 fps$
+  Resolução
+  $1280 x 720$
+  Taxas de bits do vídeo
+  Máxima: 6000 Kbps
+\end{center}
+
+Para o áudio, será utilizado áudio Estéreo será necessário uma faixa de 384 Kbps
+Com isso o pacote a ser transmitido deverá ter taxa de transmissão mínima de cerca de 6384 Kbps. \footnotemark
+
+\footnotetext{https://support.google.com/youtube/answer/1722171?hl=pt-BR}
+
+
+\subsubsubsection{Taxa de transferência do canal}
+Em 1928, Harry Nyquist, desenvolveu um estudo para a definição máxima de um canal de banda passante limitada e imune a ruídos, 
+com isso ele chegou em  uma equação matemática que pode ser escrita da seguinte forma \cite{semente}:
+
+\begin{equation}
+ C = 2*W*Mm bps
+\end{equation}
+
+\indent C = capacidade do canal na ausência de ruído;
+
+\indent W = frequência do sinal (largura de banda);
+
+\indent Mm = a modulação multinível (2 bits, 4 bits, 8 bits, 16 bits...);
+
+Considerando a melhor das hipóteses, considerando que esteja sendo utilizando uma codificação A/D de 16 bits, 
+tem-se que a melhor transferência de bits é dado por: 
+
+\begin{equation}
+ 39,020 MHz-33,48MHz=5,54MHz
+\end{equation}
+
+\begin{center}
+ $C = 2*5,54* {10} ^ {6} *16=177280000=177,28 Mb/s$
+\end{center}
+
+Com essa taxa de transferência é possível existir a comunicação em vídeo e áudio entre o VANT e a central. 
 
 \subsubsection{Análise de Custos}
 
